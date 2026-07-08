@@ -93,7 +93,7 @@
   }
 
   /* ---------- GALLERY LIGHTBOX ---------- */
-  var figures = Array.prototype.slice.call(document.querySelectorAll("#gallery-grid figure"));
+  var figures = Array.prototype.slice.call(document.querySelectorAll("#gallery-grid figure, .panel-slide__media[data-src]"));
   var lb = document.getElementById("lightbox");
   var lbImg = document.getElementById("lbImg");
   var lbIndex = 0;
@@ -130,4 +130,47 @@
   } else {
     reveals.forEach(function (r) { r.classList.add("is-in"); });
   }
+
+  /* ---------- PANEL SLIDER (transform track: drag + arrows) ---------- */
+  Array.prototype.slice.call(document.querySelectorAll(".panel-slider-wrap")).forEach(function (wrap) {
+    var slider = wrap.querySelector(".panel-slider");
+    var track = wrap.querySelector(".panel-track");
+    if (!slider || !track) return;
+    var offset = 0, down = false, startX = 0, startOffset = 0, moved = false;
+
+    function maxOffset() { return Math.max(0, track.scrollWidth - slider.clientWidth); }
+    function step() {
+      var card = track.querySelector(".panel-slide");
+      return card ? card.getBoundingClientRect().width + 22 : 320;
+    }
+    function clamp(v) { return Math.min(maxOffset(), Math.max(0, v)); }
+    function render() { track.style.transform = "translateX(" + (-offset) + "px)"; }
+    function go(v) { offset = clamp(v); render(); }
+
+    var prev = wrap.querySelector(".pslider-arrow--prev");
+    var next = wrap.querySelector(".pslider-arrow--next");
+    if (prev) prev.addEventListener("click", function () { go(offset - step()); });
+    if (next) next.addEventListener("click", function () { go(offset + step()); });
+
+    track.addEventListener("pointerdown", function (e) {
+      if (e.button != null && e.button !== 0) return;
+      down = true; moved = false; startX = e.clientX; startOffset = offset;
+      track.classList.add("is-dragging");
+    });
+    document.addEventListener("pointermove", function (e) {
+      if (!down) return;
+      var dx = e.clientX - startX;
+      if (Math.abs(dx) > 6) moved = true;
+      offset = clamp(startOffset - dx);
+      render();
+    });
+    function release() { if (!down) return; down = false; track.classList.remove("is-dragging"); }
+    document.addEventListener("pointerup", release);
+    document.addEventListener("pointercancel", release);
+    // suppress lightbox click if it was a drag
+    track.addEventListener("click", function (e) {
+      if (moved) { e.preventDefault(); e.stopPropagation(); }
+    }, true);
+    window.addEventListener("resize", function () { go(offset); });
+  });
 })();
