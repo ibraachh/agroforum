@@ -82,6 +82,12 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.18; color: var(--ink-900); font-weigh
 .year-divider__meta { font-size: .96rem; color: #cfe6d6; font-weight: 600; }
 @media (max-width: 620px) { .year-divider__meta { font-size: .86rem; } }
 
+/* per-year green shades — 2026 keeps the brand theme; 2024 emerald, 2023 olive */
+#y2024 { background: linear-gradient(115deg, #08544a, #12896a); }
+#y2023 { background: linear-gradient(115deg, #3a5720, #6a8a2f); }
+#f2024 .ribbon { background: #0c7358 !important; }
+#f2023 .ribbon { background: #56792a !important; }
+
 .section-head { max-width: 720px; margin-bottom: 40px; }
 .section-head h2 { font-size: clamp(1.7rem, 3.4vw, 2.5rem); margin: 14px 0 12px; }
 .section-head p { color: var(--ink-500); font-size: 1.03rem; margin: 0; }
