@@ -200,7 +200,7 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.18; color: var(--ink-900); font-weigh
    HERO SLIDER
    ============================================================ */
 .hero { position: relative; background: var(--green-900); overflow: hidden; }
-.slider { position: relative; }
+.slider { position: relative; touch-action: pan-y; }
 .slide { position: relative; display: none; }
 .slide.is-active { display: block; animation: fade .8s ease; }
 @keyframes fade { from { opacity: .3; } to { opacity: 1; } }
@@ -747,8 +747,17 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.18; color: var(--ink-900); font-weigh
 }
 @media (max-width: 860px) {
   html { scroll-padding-top: 62px; }
+  body { -webkit-tap-highlight-color: transparent; }
   .topbar { display: none; }
   .masthead { display: none; }
+  /* about: calmer lead, badge stays inside the photo instead of hanging over it */
+  .about-grid { gap: 28px; }
+  .about-lead { font-size: 1.06rem; line-height: 1.55; }
+  .about-media__badge {
+    left: 14px; bottom: 14px; padding: 12px 16px; border-radius: 12px;
+  }
+  .about-media__badge b { font-size: 1.18rem; }
+  .about-media__badge span { font-size: .7rem; }
   .mainnav .container { flex-wrap: nowrap; justify-content: space-between; padding-top: 6px; padding-bottom: 6px; }
   .mainnav__brand { display: flex; }
   .mainnav__brand img { height: 42px; }
@@ -771,13 +780,59 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.18; color: var(--ink-900); font-weigh
   .ribbon__item { border-bottom: 1px solid rgba(255,255,255,.1); }
   .footer__grid { grid-template-columns: 1fr 1fr; }
 }
+/* phones — proportions: nothing oversized, nothing microscopic */
+@media (max-width: 640px) {
+  /* hero: stronger scrim so photo text/detail never fights the copy */
+  .slide__media { height: clamp(480px, 74vh, 600px); }
+  .slide__media::after {
+    background: linear-gradient(180deg, rgba(8,40,22,.42) 0%, rgba(8,40,22,.66) 55%, rgba(8,40,22,.88) 100%);
+  }
+  .slide__box h2 { font-size: clamp(1.7rem, 7.4vw, 2.2rem); }
+  .slide__box p { font-size: .96rem; margin: 12px 0 18px; }
+  .slide__tag { font-size: .68rem; padding: 5px 12px; margin-bottom: 14px; }
+  .slide__meta { margin-bottom: 20px; }
+  .slide__meta div { font-size: .88rem; }
+  /* swipe drives the slider on touch — arrows only add clutter over the CTAs */
+  .slider__arrows { display: none; }
+  .slider__dots { bottom: 18px; }
+
+  /* stat ribbons: compact cells, numbers stay big enough to matter */
+  .ribbon__item { padding: 16px 14px; }
+  .ribbon__item b { font-size: 1.5rem; }
+  .ribbon__item span { font-size: .7rem; }
+
+  /* partners: two per row, logos capped */
+  .partners { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .partner { padding: 16px 12px; }
+  .partner__logo { height: 60px; margin-bottom: 10px; }
+  .partner__logo img { max-height: 56px; max-width: 88%; }
+  .partner__logo img.is-round { max-height: 56px; }
+  .partner b { font-size: .84rem; }
+  .partner span { font-size: .7rem; }
+
+  /* speaker cards: one line of text doesn't need a billboard */
+  .speakers { gap: 10px; }
+  .speaker { padding: 13px 15px; gap: 12px; }
+  .speaker__ava { width: 46px; height: 46px; font-size: .92rem; }
+  .speaker__info b { font-size: .94rem; }
+  .speaker__info span { font-size: .78rem; }
+}
 @media (max-width: 560px) {
   .editions { grid-template-columns: 1fr; }
-  .gallery { columns: 2; }
+  .gallery { columns: 2; gap: 10px; }
+  .gallery figure { margin-bottom: 10px; }
   .docrow { grid-template-columns: 1fr; gap: 12px; }
   .doctag { flex-direction: row; align-items: center; flex-wrap: wrap; }
   .cta { padding: 34px 24px; }
-  .footer__grid { grid-template-columns: 1fr; }
   .section { padding: 52px 0; }
   .slide__meta { gap: 14px; }
+
+  /* footer: link columns pair up, contact takes the full row */
+  .footer { padding-top: 44px; }
+  .footer__grid { grid-template-columns: 1fr 1fr; gap: 26px 18px; padding-bottom: 34px; }
+  .footer__brand { grid-column: 1 / -1; }
+  .footer__grid > div:last-child { grid-column: 1 / -1; }
+  .footer__brand > img { width: 230px; margin-bottom: 14px; }
+  .footer h4 { margin-bottom: 12px; }
+  .footer ul { gap: 8px; }
 }

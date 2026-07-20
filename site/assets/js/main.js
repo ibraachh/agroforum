@@ -37,6 +37,21 @@
     if (nextBtn) nextBtn.addEventListener("click", next);
     if (prevBtn) prevBtn.addEventListener("click", prev);
     restart();
+
+    // swipe (arrows are hidden on phones)
+    var sliderEl = document.querySelector(".slider");
+    if (sliderEl) {
+      var swipeX = null;
+      sliderEl.addEventListener("pointerdown", function (e) { swipeX = e.clientX; });
+      sliderEl.addEventListener("pointerup", function (e) {
+        if (swipeX == null) return;
+        var dx = e.clientX - swipeX;
+        swipeX = null;
+        if (Math.abs(dx) < 45) return;
+        if (dx < 0) next(); else prev();
+      });
+      sliderEl.addEventListener("pointercancel", function () { swipeX = null; });
+    }
   }
 
   /* ---------- MOBILE NAV ---------- */

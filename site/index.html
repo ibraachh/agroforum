@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=6">
+<link rel="stylesheet" href="assets/css/style.css?v=7">
 <link rel="icon" type="image/png" href="assets/img/logo/logo.png">
 </head>
 <body>
@@ -100,7 +100,11 @@
   <div class="slider" id="slider">
 
     <div class="slide is-active">
-      <div class="slide__media"><img src="assets/img/2026/banner.jpg" alt="3rd International Agro Business Forum 2026"></div>
+      <!-- на телефонах баннер с впечатанным текстом мешает заголовку — берём чистое фото -->
+      <div class="slide__media"><picture>
+        <source media="(max-width: 640px)" srcset="assets/img/2023/img3.jpg">
+        <img src="assets/img/2026/banner.jpg" alt="3rd International Agro Business Forum 2026">
+      </picture></div>
       <div class="slide__inner">
         <div class="container">
           <div class="slide__box">
@@ -950,6 +954,6 @@
 </div>
 
 <script src="assets/js/i18n.js?v=1"></script>
-<script src="assets/js/main.js?v=3"></script>
+<script src="assets/js/main.js?v=4"></script>
 </body>
 </html>
