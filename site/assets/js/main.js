@@ -321,6 +321,12 @@
     }
 
     openBtn.addEventListener("click", open);
+    var menuBtn = document.getElementById("menuSearch");
+    if (menuBtn) menuBtn.addEventListener("click", function () {
+      var navlist = document.getElementById("navlist");
+      if (navlist) navlist.classList.remove("is-open");
+      open();
+    });
     if (closeBtn) closeBtn.addEventListener("click", close);
     box.addEventListener("click", function (e) { if (e.target === box) close(); });
     input.addEventListener("input", function () { render(input.value.trim()); });

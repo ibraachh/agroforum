@@ -717,8 +717,8 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.18; color: var(--ink-900); font-weigh
   12%, 60% { box-shadow: 0 0 0 4px rgba(60,144,96,.55); }
 }
 
-/* language switcher inside the mobile menu (topbar is hidden there) */
-.navlist__lang { display: none; }
+/* search + lang/media rows live inside the mobile menu only */
+.navlist__search, .navlist__extra { display: none; }
 
 /* ============================================================
    RESPONSIVE
@@ -734,16 +734,49 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.18; color: var(--ink-900); font-weigh
 @media (max-width: 1100px) {
   .mainnav .container { flex-wrap: nowrap; justify-content: flex-end; }
   .nav-toggle { display: block; }
+  /* search moves inside the menu — the bar keeps only brand + burger */
+  .nav-search { display: none; }
+
+  /* dropdown: fade + slight slide, no accordion effect */
   .navlist {
     position: absolute; top: 100%; left: 0; right: 0; background: var(--green-800);
-    flex-direction: column; max-height: 0; overflow: hidden; transition: max-height .35s ease;
+    flex-direction: column;
+    max-height: calc(100vh - 62px); max-height: calc(100dvh - 62px); overflow-y: auto;
+    opacity: 0; visibility: hidden; transform: translateY(-10px); pointer-events: none;
+    transition: opacity .24s ease, transform .24s ease, visibility .24s;
+    box-shadow: 0 20px 34px rgba(4, 20, 11, .35);
   }
-  .navlist.is-open { max-height: 680px; }
-  .navlist a { padding: 15px 22px; border-bottom: 1px solid rgba(255,255,255,.08); }
+  .navlist.is-open { opacity: 1; visibility: visible; transform: none; pointer-events: auto; }
+  .navlist a { padding: 14px 22px; border-bottom: 1px solid rgba(255,255,255,.08); }
   .navlist a::after { display: none; }
-  /* keep search reachable — collapse it to the icon */
-  .nav-search { margin-right: 4px; }
-  .nav-search span { display: none; }
+
+  /* search row pinned on top of the menu */
+  .navlist__search { display: block; padding: 16px 16px 8px; }
+  .navlist__search button {
+    width: 100%; display: flex; align-items: center; gap: 10px;
+    background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.18);
+    border-radius: 10px; padding: 12px 14px; color: #dfeee4;
+    font: inherit; font-size: .95rem; text-align: left; cursor: pointer;
+  }
+  .navlist__search button:active { background: rgba(255,255,255,.16); }
+  .navlist__search svg { width: 17px; height: 17px; fill: currentColor; opacity: .75; flex: none; }
+
+  /* bottom row: language + foto/video (the topbar that phones never see) */
+  .navlist__extra {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 12px; flex-wrap: wrap; padding: 16px;
+  }
+  .navlist__extra .lang { gap: 6px; }
+  .navlist__extra .lang button { padding: 8px 14px; border: 1px solid rgba(255,255,255,.22); border-radius: 8px; color: #fff; }
+  .navlist__extra .lang button.is-active { background: rgba(255,255,255,.16); border-color: rgba(255,255,255,.45); }
+  .navlist__media { display: flex; gap: 8px; }
+  .navlist__media a {
+    display: inline-flex; align-items: center; gap: 7px;
+    color: #cfe6d6; font-size: .88rem; font-weight: 600;
+    padding: 8px 13px; border-radius: 8px; background: rgba(255,255,255,.08);
+    border-bottom: 0;
+  }
+  .navlist__media svg { width: 14px; height: 14px; fill: currentColor; }
 }
 @media (max-width: 860px) {
   html { scroll-padding-top: 62px; }
@@ -762,19 +795,6 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.18; color: var(--ink-900); font-weigh
   .mainnav__brand { display: flex; }
   .mainnav__brand img { height: 42px; }
   .nav-toggle { display: block; }
-  .navlist {
-    position: absolute; top: 100%; left: 0; right: 0; background: var(--green-800);
-    flex-direction: column; max-height: 0; overflow: hidden; transition: max-height .35s ease;
-  }
-  .navlist.is-open { max-height: 680px; }
-  .navlist a { padding: 15px 22px; border-bottom: 1px solid rgba(255,255,255,.08); }
-  .navlist a::after { display: none; }
-  .nav-search { margin-right: 4px; }
-  .nav-search span { display: none; }
-  /* the topbar (with the language switcher) is hidden here — show it in the menu */
-  .navlist__lang { display: block; padding: 14px 22px; }
-  .navlist__lang .lang { gap: 6px; }
-  .navlist__lang .lang button { padding: 7px 14px; border: 1px solid rgba(255,255,255,.22); color: #fff; }
   .ribbon .container { grid-template-columns: repeat(2, 1fr); }
   .ribbon__item:nth-child(2) { border-right: 0; }
   .ribbon__item { border-bottom: 1px solid rgba(255,255,255,.1); }
