@@ -82,18 +82,34 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.18; color: var(--ink-900); font-weigh
 .year-divider__meta { font-size: .96rem; color: #cfe6d6; font-weight: 600; }
 @media (max-width: 620px) { .year-divider__meta { font-size: .86rem; } }
 
-/* per-year tones taken from the logo leaves.
-   2026 = deep green (#006C48/#0C543C, the brand theme)
-   2024 = medium leaf green #3C9060
-   2023 = olive/lime leaf #A8B400  — both darkened so white text stays readable */
-#y2024 { background: linear-gradient(115deg, #1b4d34, #3c9060); }
-#y2023 { background: linear-gradient(115deg, #4a5206, #8f9c05); }
-#y2023 .year-divider__label { color: #e4ee9e; }   /* pale lime reads better on olive */
+/* ---------- past editions: each year carries one logo tone across its whole block ----------
+   2026 = deep green (brand, untouched) · 2024 = leaf green #3C9060 · 2023 = mint leaf #90D8B4 (deepened) */
+
+/* --- 2024 --- */
+#y2024 { background: linear-gradient(115deg, #23583c, #3c9060); }
+#f2024, #panels, #speakers { background: #edf4ef; }
 #f2024 .ribbon { background: #2f7a50 !important; }
-#f2023 .ribbon { background: #7c8804 !important; }
-/* 2023 speaker stage in the olive logo tone */
-#speakers-2023 .speaker-stage { background: radial-gradient(120% 130% at 50% -10%, #6e7a06, #3a4106 72%); }
-#speakers-2023 .leaf-photo.has-photo::before { background: radial-gradient(circle at 50% 44%, transparent 50%, rgba(58,65,6,.92) 88%); }
+#f2024 .eyebrow, #panels .eyebrow, #speakers .eyebrow { color: #2f7a50; }
+#f2024 .eyebrow::before, #panels .eyebrow::before, #speakers .eyebrow::before { background: #3c9060; }
+#f2024 .doctag__type { background: #2f7a50; }
+#panels .panel-slide { border-top-color: #3c9060; }
+#panels .panel__no { color: #2f7a50; }
+#panels .panel__speakers li::before { background: #3c9060; }
+#speakers .speaker__ava { background: linear-gradient(135deg, #3c9060, #23583c) !important; }
+
+/* --- 2023 --- */
+#y2023 { background: linear-gradient(115deg, #14514a, #1f8a7c); }
+#y2023 .year-divider__label { color: #b6e6d2; }
+#f2023, #seminars-2023, #speakers-2023 { background: #e8f3f2; }
+#f2023 .ribbon { background: #1d7568 !important; }
+#f2023 .eyebrow, #seminars-2023 .eyebrow, #speakers-2023 .eyebrow { color: #1d7568; }
+#f2023 .eyebrow::before, #seminars-2023 .eyebrow::before, #speakers-2023 .eyebrow::before { background: #1f8a7c; }
+#f2023 .doctag__type { background: #1d7568; }
+#seminars-2023 .panel-slide { border-top-color: #1f8a7c; }
+#seminars-2023 .panel__no { color: #1d7568; }
+#seminars-2023 .panel__speakers li::before { background: #1f8a7c; }
+#speakers-2023 .speaker-stage { background: radial-gradient(120% 130% at 50% -10%, #1f8a7c, #123f39 72%); }
+#speakers-2023 .leaf-photo.has-photo::before { background: radial-gradient(circle at 50% 44%, transparent 50%, rgba(18,63,57,.92) 88%); }
 
 .section-head { max-width: 720px; margin-bottom: 40px; }
 .section-head h2 { font-size: clamp(1.7rem, 3.4vw, 2.5rem); margin: 14px 0 12px; }
