@@ -740,7 +740,9 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.18; color: var(--ink-900); font-weigh
   /* dropdown: fade + slight slide, no accordion effect */
   .navlist {
     position: absolute; top: 100%; left: 0; right: 0; background: var(--green-800);
-    flex-direction: column;
+    /* nowrap is critical: a wrapping column with a capped height spills items
+       into a second column, which throws the bottom bar in among the links */
+    flex-direction: column; flex-wrap: nowrap;
     max-height: calc(100vh - 62px); max-height: calc(100dvh - 62px); overflow-y: auto;
     opacity: 0; visibility: hidden; transform: translateY(-10px); pointer-events: none;
     transition: opacity .24s ease, transform .24s ease, visibility .24s;
@@ -749,6 +751,8 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.18; color: var(--ink-900); font-weigh
   .navlist.is-open { opacity: 1; visibility: visible; transform: none; pointer-events: auto; }
   .navlist a { padding: 14px 22px; border-bottom: 1px solid rgba(255,255,255,.08); }
   .navlist a::after { display: none; }
+  /* last link's rule would double up with the bottom bar's border */
+  .navlist li:nth-last-child(2) a { border-bottom: 0; }
 
   /* search row pinned on top of the menu */
   .navlist__search { display: block; padding: 16px 16px 8px; }
@@ -761,19 +765,24 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.18; color: var(--ink-900); font-weigh
   .navlist__search button:active { background: rgba(255,255,255,.16); }
   .navlist__search svg { width: 17px; height: 17px; fill: currentColor; opacity: .75; flex: none; }
 
-  /* bottom row: language + foto/video (the topbar that phones never see) */
+  /* bottom bar: language + foto/video (the topbar that phones never see).
+     margin-top:auto pins it to the bottom when the list is short, sticky keeps
+     it there while scrolling — it must never ride up among the links. */
   .navlist__extra {
     display: flex; align-items: center; justify-content: space-between;
-    gap: 12px; flex-wrap: wrap; padding: 16px;
+    gap: 10px; flex-wrap: wrap; padding: 14px 14px;
+    margin-top: auto; position: sticky; bottom: 0;
+    background: var(--green-900);
+    border-top: 1px solid rgba(255,255,255,.14);
   }
   .navlist__extra .lang { gap: 6px; }
   .navlist__extra .lang button { padding: 8px 14px; border: 1px solid rgba(255,255,255,.22); border-radius: 8px; color: #fff; }
   .navlist__extra .lang button.is-active { background: rgba(255,255,255,.16); border-color: rgba(255,255,255,.45); }
-  .navlist__media { display: flex; gap: 8px; }
+  .navlist__media { display: flex; gap: 7px; }
   .navlist__media a {
-    display: inline-flex; align-items: center; gap: 7px;
-    color: #cfe6d6; font-size: .88rem; font-weight: 600;
-    padding: 8px 13px; border-radius: 8px; background: rgba(255,255,255,.08);
+    display: inline-flex; align-items: center; gap: 6px;
+    color: #cfe6d6; font-size: .84rem; font-weight: 600;
+    padding: 8px 11px; border-radius: 8px; background: rgba(255,255,255,.08);
     border-bottom: 0;
   }
   .navlist__media svg { width: 14px; height: 14px; fill: currentColor; }

@@ -59,7 +59,11 @@
   var navlist = document.getElementById("navlist");
   if (toggle && navlist) {
     toggle.addEventListener("click", function () {
+      var opening = !navlist.classList.contains("is-open");
       navlist.classList.toggle("is-open");
+      // the menu scrolls internally and keeps its position between opens —
+      // always start from the top so the layout never "jumps"
+      if (opening) navlist.scrollTop = 0;
     });
     navlist.addEventListener("click", function (e) {
       if (e.target.tagName === "A") navlist.classList.remove("is-open");
