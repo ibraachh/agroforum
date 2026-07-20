@@ -173,11 +173,11 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.18; color: var(--ink-900); font-weigh
 .navlist { display: flex; list-style: none; margin: 0; padding: 0; flex-wrap: wrap; }
 .navlist a {
   display: block; color: #eafaef; font-weight: 700; font-size: .86rem;
-  letter-spacing: .04em; text-transform: uppercase; padding: 17px 15px; position: relative;
+  letter-spacing: .04em; text-transform: uppercase; padding: 17px 11px; position: relative;
   transition: color .2s;
 }
 .navlist a::after {
-  content: ""; position: absolute; left: 15px; right: 15px; bottom: 10px; height: 3px;
+  content: ""; position: absolute; left: 11px; right: 11px; bottom: 10px; height: 3px;
   background: var(--lime-400); transform: scaleX(0); transform-origin: left; transition: transform .25s;
   border-radius: 3px;
 }
@@ -568,6 +568,45 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.18; color: var(--ink-900); font-weigh
 .partner span { font-size: .76rem; color: var(--ink-300); margin-top: 4px; }
 
 /* ============================================================
+   SPONSORSHIP
+   ============================================================ */
+.sponsor-cta { display: grid; grid-template-columns: 1.35fr .65fr; gap: 46px; align-items: start; }
+.sponsor-cta__text h2 { font-size: clamp(1.7rem, 3.4vw, 2.4rem); margin: 14px 0 14px; }
+.sponsor-cta__text > p { color: var(--ink-500); font-size: 1.03rem; margin: 0 0 24px; }
+
+.sponsor-stats { display: flex; gap: 38px; flex-wrap: wrap; margin-bottom: 24px; padding: 18px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.sponsor-stats b { display: block; font-size: 1.65rem; color: var(--green-700); line-height: 1; }
+.sponsor-stats span { font-size: .78rem; color: var(--ink-300); text-transform: uppercase; letter-spacing: .08em; font-weight: 700; }
+
+.sponsor-benefits { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.sponsor-benefits li { display: flex; gap: 12px; align-items: flex-start; color: var(--ink-700); font-size: .98rem; }
+.sponsor-benefits svg { width: 20px; height: 20px; fill: var(--green-500); flex: none; margin-top: 2px; }
+
+.sponsor-card {
+  background: linear-gradient(140deg, var(--green-800), var(--green-600));
+  border-radius: 20px; padding: 30px 28px 26px; color: #fff;
+  position: relative; overflow: hidden; box-shadow: var(--shadow-md);
+}
+.sponsor-card::before { content: ""; position: absolute; right: -55px; top: -65px; width: 200px; height: 200px; border-radius: 50%; background: rgba(169,194,31,.18); }
+.sponsor-card > * { position: relative; z-index: 2; }
+.sponsor-card__label {
+  display: inline-flex; align-items: center; gap: 8px; font-size: .68rem; font-weight: 800;
+  letter-spacing: .13em; text-transform: uppercase; color: var(--lime-400);
+}
+.sponsor-card__label::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--lime-400); }
+.sponsor-card h3 { color: #fff; font-size: 1.3rem; margin: 12px 0 8px; line-height: 1.2; }
+.sponsor-card p { color: #d7ecdd; font-size: .92rem; margin: 0 0 20px; }
+.sponsor-card .btn { width: 100%; justify-content: center; background: #fff; color: var(--green-800); box-shadow: 0 6px 16px rgba(0,0,0,.18); }
+.sponsor-card .btn:hover { background: var(--mint-100); transform: translateY(-1px); }
+.sponsor-card__contact { display: grid; gap: 11px; margin-top: 18px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,.16); }
+.sponsor-card__contact a { display: flex; align-items: center; gap: 10px; color: #cfe6d6; font-size: .9rem; transition: color .2s; }
+.sponsor-card__contact a:hover { color: #fff; }
+.sponsor-card__contact svg { width: 16px; height: 16px; fill: var(--lime-400); flex: none; }
+
+@media (max-width: 900px) { .sponsor-cta { grid-template-columns: 1fr; gap: 30px; } }
+@media (max-width: 560px) { .sponsor-stats { gap: 24px; } .sponsor-stats b { font-size: 1.4rem; } }
+
+/* ============================================================
    CTA / REGISTER
    ============================================================ */
 .cta {
@@ -636,11 +675,25 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.18; color: var(--ink-900); font-weigh
   .about-grid { grid-template-columns: 1fr; }
   .cta { grid-template-columns: 1fr; }
 }
+/* the full nav needs ~1100px; below that collapse it to the burger
+   (the masthead above still carries the logo, so the bar stays clean) */
+@media (max-width: 1100px) {
+  .mainnav .container { flex-wrap: nowrap; justify-content: flex-end; }
+  .nav-toggle { display: block; }
+  .navlist {
+    position: absolute; top: 100%; left: 0; right: 0; background: var(--green-800);
+    flex-direction: column; max-height: 0; overflow: hidden; transition: max-height .35s ease;
+  }
+  .navlist.is-open { max-height: 620px; }
+  .navlist a { padding: 15px 22px; border-bottom: 1px solid rgba(255,255,255,.08); }
+  .navlist a::after { display: none; }
+  .nav-search { display: none; }
+}
 @media (max-width: 860px) {
   html { scroll-padding-top: 62px; }
   .topbar { display: none; }
   .masthead { display: none; }
-  .mainnav .container { flex-wrap: nowrap; padding-top: 6px; padding-bottom: 6px; }
+  .mainnav .container { flex-wrap: nowrap; justify-content: space-between; padding-top: 6px; padding-bottom: 6px; }
   .mainnav__brand { display: flex; }
   .mainnav__brand img { height: 42px; }
   .nav-toggle { display: block; }
