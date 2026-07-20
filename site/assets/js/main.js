@@ -172,5 +172,154 @@
       if (moved) { e.preventDefault(); e.stopPropagation(); }
     }, true);
     window.addEventListener("resize", function () { go(offset); });
+    // let search scroll a hidden slide into view
+    wrap.__showSlide = function (el) { if (track.contains(el)) go(el.offsetLeft); };
   });
+
+  /* ---------- SITE SEARCH ---------- */
+  (function () {
+    var box = document.getElementById("searchbox");
+    var input = document.getElementById("searchInput");
+    var out = document.getElementById("searchResults");
+    var openBtn = document.getElementById("navSearch");
+    var closeBtn = document.getElementById("searchClose");
+    if (!box || !input || !out || !openBtn) return;
+
+    function t(s) { return window.IABF_I18N ? window.IABF_I18N.t(s) : s; }
+
+    /* fold Azerbaijani/Turkish diacritics so "muzakire" finds "müzakirə" */
+    var FOLD = { "ə": "e", "ı": "i", "İ": "i", "ş": "s", "ç": "c", "ğ": "g", "ö": "o", "ü": "u", "â": "a", "î": "i", "û": "u" };
+    function norm(s) {
+      return s.toLowerCase().replace(/[əıİşçğöüâîû]/g, function (c) { return FOLD[c] || c; });
+    }
+
+    var BLOCKS = ".docrow, .panel-slide, .speaker, .leaf-person, .partner, .edition";
+    var index = [];
+
+    function build() {
+      index = [];
+
+      // section headings — not every section wraps its h2 in .section-head
+      document.querySelectorAll("section[id]").forEach(function (sec) {
+        var h = sec.querySelector("h2");
+        if (!h) return;
+        var eyebrow = sec.querySelector(".eyebrow");
+        var lead = sec.querySelector(".section-head p, .sponsor-cta__text p, p");
+        index.push({
+          title: h.textContent.trim(),
+          context: eyebrow ? eyebrow.textContent.trim() : "",
+          text: (h.textContent + " " + (lead ? lead.textContent : "")).replace(/\s+/g, " ").trim(),
+          el: sec, block: null
+        });
+      });
+
+      // content blocks
+      document.querySelectorAll(BLOCKS).forEach(function (b) {
+        var head = b.querySelector("h2, h3, h4, b, strong");
+        if (!head) return;
+        var sec = b.closest("section[id]");
+        var secH = sec ? sec.querySelector(".section-head h2") : null;
+        index.push({
+          title: head.textContent.trim(),
+          context: secH ? secH.textContent.trim() : "",
+          text: b.textContent.replace(/\s+/g, " ").trim(),
+          el: b,
+          block: b
+        });
+      });
+
+      index.forEach(function (it) { it.hay = norm(it.title + " " + it.context + " " + it.text); });
+    }
+
+    function snippet(it, q) {
+      // drop the title from the body so the snippet doesn't repeat the heading
+      var body = it.text.replace(/\s+/g, " ").split(it.title).join(" ").replace(/\s+/g, " ").trim();
+      if (body.length <= 120) return body;
+      var i = norm(body).indexOf(q);
+      if (i < 0) return body.slice(0, 120) + "…";
+      var from = Math.max(0, i - 40);
+      return (from ? "…" : "") + body.slice(from, from + 120) + "…";
+    }
+
+    function render(q) {
+      out.innerHTML = "";
+      if (q.length < 2) {
+        out.innerHTML = '<p class="searchbox__empty">' + t("Ən azı 2 hərf yazın") + "</p>";
+        return;
+      }
+      var nq = norm(q);
+      var hits = index.filter(function (it) { return it.hay.indexOf(nq) !== -1; });
+
+      // title matches first
+      hits.sort(function (a, b) {
+        var at = norm(a.title).indexOf(nq) !== -1 ? 0 : 1;
+        var bt = norm(b.title).indexOf(nq) !== -1 ? 0 : 1;
+        return at - bt;
+      });
+      hits = hits.slice(0, 12);
+
+      if (!hits.length) {
+        out.innerHTML = '<p class="searchbox__empty">' + t("Nəticə tapılmadı") + "</p>";
+        return;
+      }
+      hits.forEach(function (it) {
+        var a = document.createElement("button");
+        a.type = "button";
+        a.className = "searchbox__hit";
+        a.innerHTML =
+          (it.context ? '<span class="searchbox__ctx">' + it.context + "</span>" : "") +
+          "<b>" + it.title + "</b>" +
+          '<span class="searchbox__snip">' + snippet(it, nq) + "</span>";
+        a.addEventListener("click", function () { goTo(it); });
+        out.appendChild(a);
+      });
+    }
+
+    function goTo(it) {
+      close();
+      // if the hit sits inside a horizontal carousel, bring it into the track first
+      var wrap = it.block && it.block.closest(".panel-slider-wrap");
+      if (wrap && wrap.__showSlide) wrap.__showSlide(it.block);
+
+      var target = wrap ? wrap.closest("section[id]") : it.el;
+      // plain scrollTo — `html { scroll-behavior: smooth }` in the CSS animates it
+      var y = target.getBoundingClientRect().top + window.pageYOffset - 110;
+      window.scrollTo(0, Math.max(0, y));
+
+      if (it.block) {
+        it.block.classList.add("is-found");
+        setTimeout(function () { it.block.classList.remove("is-found"); }, 2200);
+      }
+    }
+
+    function open() {
+      build();
+      box.classList.add("is-open");
+      document.body.style.overflow = "hidden";
+      input.value = "";
+      render("");
+      setTimeout(function () { input.focus(); }, 40);
+    }
+    function close() {
+      box.classList.remove("is-open");
+      document.body.style.overflow = "";
+    }
+
+    openBtn.addEventListener("click", open);
+    if (closeBtn) closeBtn.addEventListener("click", close);
+    box.addEventListener("click", function (e) { if (e.target === box) close(); });
+    input.addEventListener("input", function () { render(input.value.trim()); });
+    input.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") {
+        var first = out.querySelector(".searchbox__hit");
+        if (first) first.click();
+      }
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && box.classList.contains("is-open")) close();
+    });
+    document.addEventListener("iabf:langchange", function () {
+      if (box.classList.contains("is-open")) render(input.value.trim());
+    });
+  })();
 })();

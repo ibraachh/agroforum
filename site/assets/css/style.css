@@ -141,8 +141,12 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.18; color: var(--ink-900); font-weigh
 .topbar__left a:hover { opacity: 1; }
 .topbar__right { display: flex; align-items: center; gap: 16px; }
 .lang { display: flex; gap: 4px; }
-.lang a { padding: 2px 7px; border-radius: 5px; font-weight: 700; opacity: .7; }
-.lang a.is-active, .lang a:hover { background: rgba(255,255,255,.14); opacity: 1; }
+.lang button {
+  padding: 2px 7px; border-radius: 5px; font-weight: 700; opacity: .7;
+  background: none; border: 0; color: inherit; font: inherit; font-weight: 700;
+  letter-spacing: inherit; cursor: pointer;
+}
+.lang button.is-active, .lang button:hover { background: rgba(255,255,255,.14); opacity: 1; }
 .socials { display: flex; gap: 10px; }
 .socials a {
   width: 26px; height: 26px; display: grid; place-items: center;
@@ -667,6 +671,56 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.18; color: var(--ink-900); font-weigh
 .reveal.is-in { opacity: 1; transform: none; }
 
 /* ============================================================
+   SITE SEARCH
+   ============================================================ */
+.searchbox {
+  position: fixed; inset: 0; z-index: 120; display: none;
+  background: rgba(11, 34, 22, .55); backdrop-filter: blur(3px);
+  padding: 12vh 20px 40px;
+}
+.searchbox.is-open { display: block; }
+.searchbox__panel {
+  max-width: 680px; margin: 0 auto; background: #fff;
+  border-radius: 10px; overflow: hidden; box-shadow: 0 24px 60px rgba(0,0,0,.3);
+}
+.searchbox__bar { display: flex; align-items: center; gap: 10px; padding: 14px 16px; border-bottom: 1px solid #e6ece8; }
+.searchbox__bar svg { width: 19px; height: 19px; fill: var(--green-700); flex: none; }
+.searchbox__bar input {
+  flex: 1; border: 0; outline: none; font: inherit; font-size: 1.05rem; color: var(--ink);
+  background: none; padding: 4px 0;
+}
+.searchbox__bar input::-webkit-search-cancel-button { display: none; }
+.searchbox__close {
+  border: 0; background: none; font-size: 1.6rem; line-height: 1; color: #8fa398;
+  cursor: pointer; padding: 0 4px;
+}
+.searchbox__close:hover { color: var(--ink); }
+.searchbox__results { max-height: 58vh; overflow-y: auto; }
+.searchbox__empty { padding: 26px 18px; text-align: center; color: #7f9287; margin: 0; }
+.searchbox__hit {
+  display: block; width: 100%; text-align: left; border: 0; background: none;
+  padding: 12px 18px; border-bottom: 1px solid #f0f4f1; cursor: pointer; font: inherit;
+}
+.searchbox__hit:last-child { border-bottom: 0; }
+.searchbox__hit:hover, .searchbox__hit:focus { background: #f2f8f4; outline: none; }
+.searchbox__ctx {
+  display: block; font-size: .7rem; letter-spacing: .11em; text-transform: uppercase;
+  color: var(--green-600); font-weight: 700; margin-bottom: 3px;
+}
+.searchbox__hit b { display: block; color: var(--ink); font-size: 1rem; line-height: 1.3; }
+.searchbox__snip { display: block; color: #6f8479; font-size: .87rem; margin-top: 3px; line-height: 1.45; }
+
+/* flash the block a search result points at */
+.is-found { animation: foundPulse 2.2s ease; }
+@keyframes foundPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(60,144,96,0); }
+  12%, 60% { box-shadow: 0 0 0 4px rgba(60,144,96,.55); }
+}
+
+/* language switcher inside the mobile menu (topbar is hidden there) */
+.navlist__lang { display: none; }
+
+/* ============================================================
    RESPONSIVE
    ============================================================ */
 @media (max-width: 1024px) {
@@ -684,10 +738,12 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.18; color: var(--ink-900); font-weigh
     position: absolute; top: 100%; left: 0; right: 0; background: var(--green-800);
     flex-direction: column; max-height: 0; overflow: hidden; transition: max-height .35s ease;
   }
-  .navlist.is-open { max-height: 620px; }
+  .navlist.is-open { max-height: 680px; }
   .navlist a { padding: 15px 22px; border-bottom: 1px solid rgba(255,255,255,.08); }
   .navlist a::after { display: none; }
-  .nav-search { display: none; }
+  /* keep search reachable — collapse it to the icon */
+  .nav-search { margin-right: 4px; }
+  .nav-search span { display: none; }
 }
 @media (max-width: 860px) {
   html { scroll-padding-top: 62px; }
@@ -701,10 +757,15 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.18; color: var(--ink-900); font-weigh
     position: absolute; top: 100%; left: 0; right: 0; background: var(--green-800);
     flex-direction: column; max-height: 0; overflow: hidden; transition: max-height .35s ease;
   }
-  .navlist.is-open { max-height: 560px; }
+  .navlist.is-open { max-height: 680px; }
   .navlist a { padding: 15px 22px; border-bottom: 1px solid rgba(255,255,255,.08); }
   .navlist a::after { display: none; }
-  .nav-search { display: none; }
+  .nav-search { margin-right: 4px; }
+  .nav-search span { display: none; }
+  /* the topbar (with the language switcher) is hidden here — show it in the menu */
+  .navlist__lang { display: block; padding: 14px 22px; }
+  .navlist__lang .lang { gap: 6px; }
+  .navlist__lang .lang button { padding: 7px 14px; border: 1px solid rgba(255,255,255,.22); color: #fff; }
   .ribbon .container { grid-template-columns: repeat(2, 1fr); }
   .ribbon__item:nth-child(2) { border-right: 0; }
   .ribbon__item { border-bottom: 1px solid rgba(255,255,255,.1); }
