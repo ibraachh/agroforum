@@ -111,6 +111,16 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.18; color: var(--ink-900); font-weigh
 #speakers-2023 .speaker-stage { background: radial-gradient(120% 130% at 50% -10%, #1f8a7c, #123f39 72%); }
 #speakers-2023 .leaf-photo.has-photo::before { background: radial-gradient(circle at 50% 44%, transparent 50%, rgba(18,63,57,.92) 88%); }
 
+/* --- tighter rhythm inside a year block: the sections share one background,
+       so the stacked 74px paddings would otherwise leave huge gaps --- */
+#f2024, #panels, #speakers,
+#f2023, #seminars-2023, #speakers-2023 { padding: 32px 0; }
+#f2024, #f2023 { padding-top: 54px; }            /* breathing room under the year band */
+#speakers, #speakers-2023 { padding-bottom: 58px; }
+#f2024 .section-head, #panels .section-head, #speakers .section-head,
+#f2023 .section-head, #seminars-2023 .section-head, #speakers-2023 .section-head { margin-bottom: 26px; }
+#panels .panelyear, #seminars-2023 .panelyear { margin-bottom: 0; }
+
 .section-head { max-width: 720px; margin-bottom: 40px; }
 .section-head h2 { font-size: clamp(1.7rem, 3.4vw, 2.5rem); margin: 14px 0 12px; }
 .section-head p { color: var(--ink-500); font-size: 1.03rem; margin: 0; }
