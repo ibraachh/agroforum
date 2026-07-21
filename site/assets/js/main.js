@@ -66,7 +66,9 @@
       if (opening) navlist.scrollTop = 0;
     });
     navlist.addEventListener("click", function (e) {
-      if (e.target.tagName === "A") navlist.classList.remove("is-open");
+      // closest(): the Foto/Video shortcuts wrap an icon, so the target
+      // can be the svg rather than the link itself
+      if (e.target.closest && e.target.closest("a")) navlist.classList.remove("is-open");
     });
   }
 
@@ -83,16 +85,32 @@
   });
 
   /* ---------- SCROLLSPY (active nav link) ---------- */
-  var links = Array.prototype.slice.call(document.querySelectorAll(".navlist a"));
-  var sections = links
-    .map(function (l) { return document.querySelector(l.getAttribute("href")); })
+  /* direct li > a only — the menu's Foto/Video shortcuts also point at
+     #gallery/#editions, and being last in the list they would win every
+     comparison below those sections */
+  var links = Array.prototype.slice.call(document.querySelectorAll(".navlist > li > a"));
+  /* keep link and target paired so a missing target can't shift the indexes */
+  var spots = links
+    .map(function (l) {
+      var t = document.querySelector(l.getAttribute("href"));
+      return t ? { link: l, el: t } : null;
+    })
     .filter(Boolean);
   function spy() {
     var pos = window.pageYOffset + 140;
-    var idx = 0;
-    sections.forEach(function (s, i) { if (s.offsetTop <= pos) idx = i; });
+    var active = null;
+    spots.forEach(function (s) {
+      var top = s.el.getBoundingClientRect().top + window.pageYOffset;
+      if (top <= pos) active = s.link;
+    });
+    /* the footer sits too low to ever scroll past the trigger line —
+       at the bottom of the page the last entry is the one you're on */
+    var atEnd = window.innerHeight + window.pageYOffset >=
+                document.documentElement.scrollHeight - 2;
+    if (atEnd && spots.length) active = spots[spots.length - 1].link;
+
     links.forEach(function (l) { l.classList.remove("is-active"); });
-    if (links[idx]) links[idx].classList.add("is-active");
+    if (active) active.classList.add("is-active");
   }
   window.addEventListener("scroll", spy);
   spy();
