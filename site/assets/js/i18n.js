@@ -355,7 +355,35 @@
     "Axtarış sorğusu": { en: "Search query", tr: "Arama sorgusu" },
     "Bölmə, spiker və ya mövzu axtarın…": { en: "Search a section, speaker or topic…", tr: "Bölüm, konuşmacı veya konu arayın…" },
     "Nəticə tapılmadı": { en: "No results found", tr: "Sonuç bulunamadı" },
-    "Ən azı 2 hərf yazın": { en: "Type at least 2 characters", tr: "En az 2 karakter yazın" }
+    "Ən azı 2 hərf yazın": { en: "Type at least 2 characters", tr: "En az 2 karakter yazın" },
+
+    /* ---------- 2026 program ---------- */
+    "İlkin Forum proqramı aşağıdadır. Spiker siyahısı və detallar tezliklə yenilənəcək.":
+      { en: "The preliminary forum programme is below. The speaker list and details will be updated soon.",
+        tr: "Ön Forum programı aşağıdadır. Konuşmacı listesi ve detaylar yakında güncellenecek." },
+    "İlkin proqram": { en: "Preliminary programme", tr: "Ön program" },
+    "İlkin": { en: "Preliminary", tr: "Ön" },
+    "Forum proqramı": { en: "Forum programme", tr: "Forum programı" },
+    "Forum günü — cədvəl": { en: "Forum day — schedule", tr: "Forum günü — program" },
+    "Proqram ilkindir və dəyişə bilər.": { en: "The programme is preliminary and subject to change.", tr: "Program ön niteliktedir ve değişebilir." },
+    "Qeydiyyat, çay–kofe fasiləsi": { en: "Registration, coffee break", tr: "Kayıt, çay–kahve arası" },
+    "Rəsmi açılış mərasimi": { en: "Official opening ceremony", tr: "Resmi açılış töreni" },
+    "I Panel": { en: "Panel I", tr: "I. Panel" },
+    "II Panel": { en: "Panel II", tr: "II. Panel" },
+    "III Panel": { en: "Panel III", tr: "III. Panel" },
+    "Təqdimatlar": { en: "Presentations", tr: "Sunumlar" },
+    "Nahar fasiləsi": { en: "Lunch break", tr: "Öğle arası" },
+    "Ailə fotosu, yekun": { en: "Family photo, closing", tr: "Aile fotoğrafı, kapanış" },
+
+    /* ---------- forum info PDF button ---------- */
+    "Forum haqqında (PDF)": { en: "About the forum (PDF)", tr: "Forum hakkında (PDF)" },
+
+    /* ---------- sponsors ---------- */
+    "Sponsorlar · 2026": { en: "Sponsors · 2026", tr: "Sponsorlar · 2026" },
+    "Sponsorlar": { en: "Sponsors", tr: "Sponsorlar" },
+    "Forumu dəstəkləyən sponsorlarımıza təşəkkür edirik.":
+      { en: "We thank our sponsors who support the forum.",
+        tr: "Forumu destekleyen sponsorlarımıza teşekkür ederiz." }
   };
 
   var ATTRS = ["aria-label", "placeholder", "title"];

@@ -75,10 +75,13 @@
   /* ---------- STICKY NAV STATE ---------- */
   var nav = document.getElementById("mainnav");
   var totop = document.getElementById("totop");
+  var stickyCta = document.getElementById("stickyCta");
   window.addEventListener("scroll", function () {
     var y = window.pageYOffset;
     if (nav) nav.classList.toggle("is-stuck", y > 260);
     if (totop) totop.classList.toggle("is-visible", y > 600);
+    // reveal the floating register button once the masthead CTA is gone
+    if (stickyCta) stickyCta.classList.toggle("is-visible", y > 520);
   });
   if (totop) totop.addEventListener("click", function () {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -364,5 +367,19 @@
     document.addEventListener("iabf:langchange", function () {
       if (box.classList.contains("is-open")) render(input.value.trim());
     });
+  })();
+
+  /* ---------- LANGUAGE-AWARE FORUM PDF ---------- */
+  (function () {
+    var link = document.getElementById("forumInfoPdf");
+    if (!link) return;
+    function sync() {
+      var lang = window.IABF_I18N ? window.IABF_I18N.current() : "az";
+      // only AZ and EN PDFs exist — TR falls back to EN
+      var href = lang === "az" ? link.getAttribute("data-pdf-az") : link.getAttribute("data-pdf-en");
+      link.setAttribute("href", href);
+    }
+    sync();
+    document.addEventListener("iabf:langchange", sync);
   })();
 })();

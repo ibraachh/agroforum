@@ -20,6 +20,8 @@ site/
   assets/img/2023/      — фото 2023 (оптимизированные, img1..img10)
   assets/img/2024/      — фото 2024 (img1..img8)
   assets/img/logo/      — логотип
+  assets/img/sponsors/  — логотипы партнёров и спонсоров
+  assets/docs/          — Forum haqqında PDF (AZ/EN) — открывается кнопкой в #sponsorship
 ```
 Оригинальные тяжёлые фото лежат в `photos/` (в корне) — не используются сайтом.
 
