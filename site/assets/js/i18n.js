@@ -375,6 +375,14 @@
     "Nahar fasiləsi": { en: "Lunch break", tr: "Öğle arası" },
     "Ailə fotosu, yekun": { en: "Family photo, closing", tr: "Aile fotoğrafı, kapanış" },
 
+    /* ---------- countdown ---------- */
+    "Foruma qalan vaxt": { en: "Time left until the forum", tr: "Foruma kalan süre" },
+    "Gün": { en: "Days", tr: "Gün" },
+    "Saat": { en: "Hours", tr: "Saat" },
+    "Dəqiqə": { en: "Minutes", tr: "Dakika" },
+    "Saniyə": { en: "Seconds", tr: "Saniye" },
+    "Forum başladı!": { en: "The forum has started!", tr: "Forum başladı!" },
+
     /* ---------- forum info PDF button ---------- */
     "Forum haqqında (PDF)": { en: "About the forum (PDF)", tr: "Forum hakkında (PDF)" },
 

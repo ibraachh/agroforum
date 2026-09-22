@@ -369,6 +369,38 @@
     });
   })();
 
+  /* ---------- COUNTDOWN TO EVENT ---------- */
+  (function () {
+    var root = document.getElementById("countdown");
+    if (!root) return;
+    var target = new Date(root.getAttribute("data-target")).getTime();
+    if (isNaN(target)) return;
+    var grid = document.getElementById("countdownGrid");
+    var live = document.getElementById("countdownLive");
+    var elD = document.getElementById("cd-days");
+    var elH = document.getElementById("cd-hours");
+    var elM = document.getElementById("cd-mins");
+    var elS = document.getElementById("cd-secs");
+    var timer = null;
+    function pad(n) { return (n < 10 ? "0" : "") + n; }
+    function tick() {
+      var diff = target - Date.now();
+      if (diff <= 0) {
+        if (grid) grid.hidden = true;
+        if (live) live.hidden = false;
+        if (timer) clearInterval(timer);
+        return;
+      }
+      var s = Math.floor(diff / 1000);
+      elD.textContent = pad(Math.floor(s / 86400));
+      elH.textContent = pad(Math.floor((s % 86400) / 3600));
+      elM.textContent = pad(Math.floor((s % 3600) / 60));
+      elS.textContent = pad(s % 60);
+    }
+    tick();
+    timer = setInterval(tick, 1000);
+  })();
+
   /* ---------- LANGUAGE-AWARE FORUM PDF ---------- */
   (function () {
     var link = document.getElementById("forumInfoPdf");
