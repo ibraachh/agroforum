@@ -923,21 +923,85 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.18; color: var(--ink-900); font-weigh
 /* ============================================================
    COUNTDOWN — homepage event countdown
    ============================================================ */
-.countdown { background: linear-gradient(115deg, var(--green-900), var(--green-700)); color: #fff; padding: 30px 0; position: relative; overflow: hidden; }
-.countdown::before { content: ""; position: absolute; right: -60px; top: -90px; width: 300px; height: 300px; border-radius: 50%; background: rgba(169,194,31,.14); }
+.countdown { background: linear-gradient(120deg, #ffd44d, #f4b019); color: #3a2c00; padding: 30px 0; position: relative; overflow: hidden; }
+.countdown::before { content: ""; position: absolute; right: -60px; top: -90px; width: 300px; height: 300px; border-radius: 50%; background: rgba(255,255,255,.28); }
 .countdown .container { position: relative; z-index: 2; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
 .countdown__head { display: flex; flex-direction: column; gap: 5px; }
-.countdown__eyebrow { font-size: .8rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; color: var(--lime-400); }
-.countdown__date { font-size: 1.05rem; font-weight: 700; color: #eafaef; }
+.countdown__eyebrow { font-size: .8rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; color: var(--green-700); }
+.countdown__date { font-size: 1.05rem; font-weight: 700; color: #3a2c00; }
 .countdown__grid { display: flex; gap: 12px; }
-.cd-cell { min-width: 82px; text-align: center; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.14); border-radius: 12px; padding: 12px 10px; }
-.cd-cell b { display: block; font-size: 2rem; font-weight: 800; line-height: 1; font-variant-numeric: tabular-nums; }
-.cd-cell span { display: block; font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; color: #a9cbb4; margin-top: 6px; }
-.countdown__live { font-size: 1.4rem; font-weight: 800; color: var(--lime-400); }
+.cd-cell { min-width: 82px; text-align: center; background: #fff; border: 1px solid rgba(0,0,0,.06); border-radius: 12px; padding: 12px 10px; box-shadow: 0 4px 12px rgba(120,80,0,.14); }
+.cd-cell b { display: block; font-size: 2rem; font-weight: 800; line-height: 1; font-variant-numeric: tabular-nums; color: #1c1400; }
+.cd-cell span { display: block; font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; color: #8a6a12; margin-top: 6px; }
+.countdown__live { font-size: 1.4rem; font-weight: 800; color: var(--green-700); }
 @media (max-width: 640px) {
   .countdown .container { justify-content: center; text-align: center; }
   .countdown__head { align-items: center; width: 100%; }
   .countdown__grid { width: 100%; justify-content: center; }
   .cd-cell { min-width: 0; flex: 1; max-width: 84px; padding: 10px 6px; }
   .cd-cell b { font-size: 1.55rem; }
+}
+
+/* ============================================================
+   PARTNER GROUPS (role-grouped blocks)
+   ============================================================ */
+.partner-group { margin-top: 34px; }
+.partner-group:first-of-type { margin-top: 0; }
+.partner-group__title {
+  display: flex; align-items: center; gap: 10px;
+  font-size: .82rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--green-700); margin: 0 0 16px; padding-bottom: 10px; border-bottom: 1px solid var(--line);
+}
+.partner-group__title::before { content: ""; width: 22px; height: 3px; border-radius: 2px; background: var(--lime-500); }
+
+/* ============================================================
+   PROGRAM CTA + MODAL
+   ============================================================ */
+.program-cta {
+  display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;
+  background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius);
+  box-shadow: var(--shadow-sm); padding: 20px 24px; margin-bottom: 32px;
+}
+.program-cta__text { display: flex; flex-direction: column; gap: 6px; }
+.program-cta__text p { margin: 0; color: var(--ink-500); font-size: .98rem; }
+.program-cta .btn svg { width: 18px; height: 18px; fill: currentColor; }
+
+.pmodal {
+  position: fixed; inset: 0; z-index: 130; display: none;
+  background: rgba(11,34,22,.6); backdrop-filter: blur(3px);
+  padding: 6vh 16px;
+}
+.pmodal.is-open { display: flex; align-items: flex-start; justify-content: center; }
+.pmodal__panel {
+  width: 100%; max-width: 720px; max-height: 88vh; overflow-y: auto;
+  background: #fff; border-radius: 14px; box-shadow: 0 26px 70px rgba(0,0,0,.34);
+}
+.pmodal__head {
+  position: sticky; top: 0; background: #fff; z-index: 2;
+  display: flex; align-items: flex-start; justify-content: space-between; gap: 16px;
+  padding: 22px 26px 16px; border-bottom: 1px solid var(--line);
+}
+.pmodal__head h3 { margin: 9px 0 4px; font-size: 1.5rem; color: var(--ink-900); }
+.pmodal__date { font-size: .92rem; color: var(--ink-500); font-weight: 600; }
+.pmodal__close { border: 0; background: none; font-size: 1.9rem; line-height: 1; color: #8fa398; cursor: pointer; padding: 0 4px; }
+.pmodal__close:hover { color: var(--ink-900); }
+.pmodal__body { padding: 12px 26px 26px; }
+.pmodal__note { margin: 18px 0 0; font-size: .85rem; color: var(--ink-300); font-style: italic; }
+
+.agenda-item { display: grid; grid-template-columns: 128px 1fr; gap: 18px; padding: 16px 0; border-bottom: 1px solid var(--line); }
+.agenda-item:last-of-type { border-bottom: 0; }
+.agenda-item__time { font-weight: 800; color: var(--green-700); font-variant-numeric: tabular-nums; padding-top: 2px; }
+.agenda-item__main b { display: block; color: var(--ink-900); font-size: 1.05rem; line-height: 1.35; }
+.agenda-panel { display: inline-block; font-size: .68rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: #fff; background: var(--green-600); padding: 3px 9px; border-radius: 100px; margin-bottom: 7px; }
+.agenda-sub { margin: 4px 0 0; color: var(--ink-500); font-size: .9rem; }
+.agenda-mod { margin: 8px 0 0; color: var(--ink-700); font-size: .92rem; }
+.agenda-role { font-size: .66rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--green-600); margin-right: 6px; }
+.agenda-speakers { list-style: none; margin: 9px 0 0; padding: 0; display: grid; gap: 7px; }
+.agenda-speakers li { position: relative; padding-left: 16px; color: var(--ink-700); font-size: .92rem; line-height: 1.4; }
+.agenda-speakers li::before { content: ""; position: absolute; left: 0; top: 8px; width: 6px; height: 6px; border-radius: 50%; background: var(--lime-500); }
+@media (max-width: 560px) {
+  .agenda-item { grid-template-columns: 1fr; gap: 5px; }
+  .agenda-item__time { padding-top: 0; }
+  .pmodal__head { padding: 18px; }
+  .pmodal__body { padding: 10px 18px 20px; }
 }

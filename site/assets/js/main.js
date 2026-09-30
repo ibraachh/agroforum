@@ -369,6 +369,22 @@
     });
   })();
 
+  /* ---------- PROGRAM MODAL ---------- */
+  (function () {
+    var modal = document.getElementById("programModal");
+    var openBtn = document.getElementById("openProgram");
+    var closeBtn = document.getElementById("programClose");
+    if (!modal || !openBtn) return;
+    function open() { modal.classList.add("is-open"); document.body.style.overflow = "hidden"; }
+    function close() { modal.classList.remove("is-open"); document.body.style.overflow = ""; }
+    openBtn.addEventListener("click", open);
+    if (closeBtn) closeBtn.addEventListener("click", close);
+    modal.addEventListener("click", function (e) { if (e.target === modal) close(); });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && modal.classList.contains("is-open")) close();
+    });
+  })();
+
   /* ---------- COUNTDOWN TO EVENT ---------- */
   (function () {
     var root = document.getElementById("countdown");

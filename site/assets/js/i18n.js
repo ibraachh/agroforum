@@ -383,6 +383,30 @@
     "Saniyə": { en: "Seconds", tr: "Saniye" },
     "Forum başladı!": { en: "The forum has started!", tr: "Forum başladı!" },
 
+    /* ---------- partner group headings ---------- */
+    "Təşkilatçılar": { en: "Organisers", tr: "Düzenleyenler" },
+    "Sponsor": { en: "Sponsor", tr: "Sponsor" },
+    "Dəstəkçi": { en: "Supporter", tr: "Destekçi" },
+    "Media tərəfdaşları": { en: "Media partners", tr: "Medya ortakları" },
+    "Torpağınızın qoruyucusu": { en: "Guardian of your soil", tr: "Toprağınızın koruyucusu" },
+
+    /* ---------- program modal ---------- */
+    "Forum proqramına bax": { en: "View the forum programme", tr: "Forum programına bak" },
+    "Forum günü — tam cədvəl, panellər və spikerlər.": { en: "The forum day — full schedule, panels and speakers.", tr: "Forum günü — tam program, paneller ve konuşmacılar." },
+    "9 Oktyabr 2026 · Radisson Hotel, Bakı": { en: "9 October 2026 · Radisson Hotel, Baku", tr: "9 Ekim 2026 · Radisson Hotel, Bakü" },
+    "Qeydiyyat, qonaqların gəlişi, çay-kofe ikramı": { en: "Registration, arrival of guests, coffee", tr: "Kayıt, konukların gelişi, çay-kahve" },
+    "Açılış nitqi": { en: "Opening speech", tr: "Açılış konuşması" },
+    "Sponsor və tərəfdaşların mükafatlandırılması": { en: "Awarding of sponsors and partners", tr: "Sponsor ve ortakların ödüllendirilmesi" },
+    "Moderator": { en: "Moderator", tr: "Moderatör" },
+    "1-ci Panel": { en: "Panel 1", tr: "1. Panel" },
+    "2-ci Panel": { en: "Panel 2", tr: "2. Panel" },
+    "3-cü Panel": { en: "Panel 3", tr: "3. Panel" },
+    "Aqrar sahədə dövlət dəstəyi və maliyyə imkanlarına çıxış": { en: "State support and access to financing in agriculture", tr: "Tarımda devlet desteği ve finansmana erişim" },
+    "Aqrar istehsal vasitələri ilə təminat": { en: "Supply of agricultural inputs", tr: "Tarımsal üretim araçlarının tedariki" },
+    "Toxum, su, gübrə, yem, baytarlıq, pestisid, aqrar texnika": { en: "Seed, water, fertiliser, feed, veterinary, pesticides, agri-machinery", tr: "Tohum, su, gübre, yem, veterinerlik, pestisit, tarım makineleri" },
+    "Aqrar sahədə daxili və xarici bazarlara çıxışın asanlaşdırılması": { en: "Easing access to domestic and foreign markets in agriculture", tr: "Tarımda iç ve dış pazarlara erişimin kolaylaştırılması" },
+    "Çay-kofe fasiləsi, B2B görüşlər": { en: "Coffee break, B2B meetings", tr: "Çay-kahve arası, B2B görüşmeler" },
+
     /* ---------- forum info PDF button ---------- */
     "Forum haqqında (PDF)": { en: "About the forum (PDF)", tr: "Forum hakkında (PDF)" },
 
