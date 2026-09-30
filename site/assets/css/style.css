@@ -547,9 +547,9 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.18; color: var(--ink-900); font-weigh
 /* ============================================================
    PARTNERS
    ============================================================ */
-.partners { display: grid; grid-template-columns: repeat(auto-fill, minmax(188px, 1fr)); gap: 18px; }
+.partners { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; }
 .partner {
-  background: var(--paper); border: 1px solid var(--line); border-radius: 16px; padding: 24px 18px 20px;
+  width: 190px; background: var(--paper); border: 1px solid var(--line); border-radius: 14px; padding: 18px 14px 15px;
   text-align: center; box-shadow: var(--shadow-sm); transition: transform .25s, box-shadow .25s, border-color .25s;
   display: flex; flex-direction: column; position: relative; overflow: hidden;
 }
@@ -560,9 +560,9 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.18; color: var(--ink-900); font-weigh
 .partner--ticket::before { background: #2563eb; }
 .partner:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); border-color: transparent; }
 .partner:hover::before { transform: scaleX(1); }
-.partner__logo { height: 88px; display: grid; place-items: center; margin-bottom: 14px; }
-.partner__logo img { max-height: 82px; max-width: 82%; width: auto; object-fit: contain; }
-.partner__logo img.is-round { max-height: 82px; border-radius: 50%; }
+.partner__logo { height: 64px; display: grid; place-items: center; margin-bottom: 11px; }
+.partner__logo img { max-height: 58px; max-width: 82%; width: auto; object-fit: contain; }
+.partner__logo img.is-round { max-height: 58px; border-radius: 50%; }
 .partner__role {
   align-self: center; font-size: .6rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase;
   color: var(--green-700); background: var(--mint-100); padding: 4px 11px; border-radius: 100px; margin-bottom: 9px;
@@ -831,11 +831,11 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.18; color: var(--ink-900); font-weigh
   .ribbon__item span { font-size: .7rem; }
 
   /* partners: two per row, logos capped */
-  .partners { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-  .partner { padding: 16px 12px; }
-  .partner__logo { height: 60px; margin-bottom: 10px; }
-  .partner__logo img { max-height: 56px; max-width: 88%; }
-  .partner__logo img.is-round { max-height: 56px; }
+  .partners { gap: 12px; }
+  .partner { width: calc(50% - 6px); padding: 16px 12px; }
+  .partner__logo { height: 56px; margin-bottom: 10px; }
+  .partner__logo img { max-height: 52px; max-width: 88%; }
+  .partner__logo img.is-round { max-height: 52px; }
   .partner b { font-size: .84rem; }
   .partner span { font-size: .7rem; }
 
@@ -945,7 +945,7 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.18; color: var(--ink-900); font-weigh
 /* ============================================================
    PARTNER GROUPS (role-grouped blocks)
    ============================================================ */
-.partner-group { margin-top: 34px; }
+.partner-group { margin-top: 24px; }
 .partner-group:first-of-type { margin-top: 0; }
 .partner-group__title {
   display: flex; align-items: center; gap: 10px;
