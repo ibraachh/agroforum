@@ -369,6 +369,69 @@
     });
   })();
 
+  /* ---------- REELS (infinite marquee + player) ---------- */
+  (function () {
+    var marquee = document.getElementById("reelsMarquee");
+    var track = document.getElementById("reelsTrack");
+    if (!marquee || !track) return;
+    var cards = Array.prototype.slice.call(track.children);
+    if (!cards.length) return;
+
+    // duplicate the set so the marquee can scroll seamlessly (-50%)
+    cards.forEach(function (c) { track.appendChild(c.cloneNode(true)); });
+
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!reduce) {
+      // duration scales with how many originals there are (keeps speed steady)
+      track.style.animationDuration = (cards.length * 7) + "s";
+      marquee.classList.add("is-animated");
+    }
+
+    // autoplay the muted preview videos when they enter the viewport
+    var vids = Array.prototype.slice.call(track.querySelectorAll("video"));
+    if ("IntersectionObserver" in window) {
+      var vio = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          var v = en.target;
+          if (en.isIntersecting) {
+            if (!v.src && v.getAttribute("data-s")) v.src = v.getAttribute("data-s");
+            var p = v.play(); if (p && p.catch) p.catch(function () {});
+          } else { v.pause(); }
+        });
+      }, { threshold: 0.2 });
+      vids.forEach(function (v) { vio.observe(v); });
+    } else {
+      vids.forEach(function (v) { v.play && v.play(); });
+    }
+
+    // click a card → open the full video with sound in the modal
+    var modal = document.getElementById("reelModal");
+    var rv = document.getElementById("reelVideo");
+    var rClose = document.getElementById("reelClose");
+    function openReel(src) {
+      if (!modal || !rv) return;
+      rv.src = src; rv.muted = false; rv.currentTime = 0;
+      modal.classList.add("is-open");
+      document.body.style.overflow = "hidden";
+      var p = rv.play(); if (p && p.catch) p.catch(function () {});
+    }
+    function closeReel() {
+      if (!modal || !rv) return;
+      rv.pause(); rv.removeAttribute("src"); rv.load();
+      modal.classList.remove("is-open");
+      document.body.style.overflow = "";
+    }
+    track.addEventListener("click", function (e) {
+      var card = e.target.closest(".reel-card");
+      if (card) openReel(card.getAttribute("data-src"));
+    });
+    if (rClose) rClose.addEventListener("click", closeReel);
+    if (modal) modal.addEventListener("click", function (e) { if (e.target === modal) closeReel(); });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && modal && modal.classList.contains("is-open")) closeReel();
+    });
+  })();
+
   /* ---------- PROGRAM MODAL ---------- */
   (function () {
     var modal = document.getElementById("programModal");

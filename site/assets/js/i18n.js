@@ -388,7 +388,18 @@
     "Sponsor": { en: "Sponsor", tr: "Sponsor" },
     "Dəstəkçi": { en: "Supporter", tr: "Destekçi" },
     "Media tərəfdaşları": { en: "Media partners", tr: "Medya ortakları" },
+    "Baş sponsor": { en: "Main sponsor", tr: "Ana sponsor" },
+    "Dəstəkçilər": { en: "Supporters", tr: "Destekçiler" },
+    "Bilet tərəfdaşı": { en: "Ticket partner", tr: "Bilet ortağı" },
     "Torpağınızın qoruyucusu": { en: "Guardian of your soil", tr: "Toprağınızın koruyucusu" },
+    "Azərbaycan Sahibkarlar Konfederasiyası": { en: "Azerbaijan Confederation of Entrepreneurs", tr: "Azerbaycan Girişimciler Konfederasyonu" },
+    "Aqromarket Servis MMC": { en: "Aqromarket Servis LLC", tr: "Aqromarket Servis MMC" },
+    "Agriculture Consultancy": { en: "Agriculture Consultancy", tr: "Tarım Danışmanlığı" },
+
+    /* ---------- reels ---------- */
+    "Forum anları": { en: "Forum moments", tr: "Forum anları" },
+    "Foruma dair qısa videolar — reel formatında.": { en: "Short videos from the forum — in reel format.", tr: "Foruma dair kısa videolar — reel formatında." },
+    "Videonu aç": { en: "Open the video", tr: "Videoyu aç" },
 
     /* ---------- program modal ---------- */
     "Forum proqramına bax": { en: "View the forum programme", tr: "Forum programına bak" },

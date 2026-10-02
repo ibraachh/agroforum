@@ -954,6 +954,23 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.18; color: var(--ink-900); font-weigh
 }
 .partner-group__title::before { content: ""; width: 22px; height: 3px; border-radius: 2px; background: var(--lime-500); }
 
+/* Baş sponsor — highlighted, larger card */
+.partner-group--hero .partner-group__title { color: #b8860b; }
+.partner-group--hero .partner-group__title::before { background: #e0a400; }
+.partner-group--hero .partner {
+  width: 300px; padding: 26px 24px 22px;
+  border: 2px solid #f0c24b; background: linear-gradient(180deg, #fffdf5, #fff);
+  box-shadow: 0 12px 30px rgba(176,135,11,.16);
+}
+.partner-group--hero .partner__logo { height: 96px; margin-bottom: 14px; }
+.partner-group--hero .partner__logo img { max-height: 90px; max-width: 88%; }
+.partner-group--hero .partner b { font-size: 1.05rem; }
+@media (max-width: 560px) {
+  .partner-group--hero .partner { width: 100%; max-width: 320px; }
+  .partner-group--hero .partner__logo { height: 76px; }
+  .partner-group--hero .partner__logo img { max-height: 72px; }
+}
+
 /* ============================================================
    PROGRAM CTA + MODAL
    ============================================================ */
@@ -1005,3 +1022,42 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.18; color: var(--ink-900); font-weigh
   .pmodal__head { padding: 18px; }
   .pmodal__body { padding: 10px 18px 20px; }
 }
+
+/* ============================================================
+   REELS — infinite marquee of vertical videos
+   ============================================================ */
+.reels-section { padding-bottom: 60px; }
+.reels-marquee {
+  overflow: hidden; width: 100%;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+          mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+}
+.reels-track { display: flex; gap: 18px; width: max-content; padding: 8px 18px; }
+.reels-marquee.is-animated .reels-track { animation: reelscroll linear infinite; }
+.reels-marquee.is-animated:hover .reels-track { animation-play-state: paused; }
+@keyframes reelscroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.reel-card {
+  position: relative; flex: 0 0 auto; width: 232px; aspect-ratio: 9 / 16;
+  border: 0; padding: 0; border-radius: 16px; overflow: hidden; cursor: pointer;
+  background: var(--green-900); box-shadow: var(--shadow-md);
+}
+.reel-card video { width: 100%; height: 100%; object-fit: cover; display: block; }
+.reel-card__play {
+  position: absolute; inset: 0; margin: auto; width: 54px; height: 54px; border-radius: 50%;
+  background: rgba(0,0,0,.42); display: grid; place-items: center; pointer-events: none;
+  transition: transform .2s, background .2s;
+}
+.reel-card__play svg { width: 22px; height: 22px; fill: #fff; margin-left: 3px; }
+.reel-card:hover .reel-card__play { transform: scale(1.1); background: rgba(217,45,32,.9); }
+@media (max-width: 560px) { .reel-card { width: 168px; } .reels-track { gap: 12px; padding: 6px 12px; } }
+
+.reel-modal { position: fixed; inset: 0; z-index: 140; display: none; background: rgba(5,16,10,.92); }
+.reel-modal.is-open { display: flex; align-items: center; justify-content: center; padding: 4vh 12px; }
+.reel-modal__stage { height: 92vh; aspect-ratio: 9 / 16; max-width: 96vw; }
+.reel-modal__stage video { width: 100%; height: 100%; object-fit: contain; border-radius: 12px; background: #000; }
+.reel-modal__close {
+  position: absolute; top: 14px; right: 18px; z-index: 2; border: 0; cursor: pointer;
+  width: 44px; height: 44px; border-radius: 50%; background: rgba(255,255,255,.14); color: #fff;
+  font-size: 1.8rem; line-height: 1;
+}
+.reel-modal__close:hover { background: rgba(255,255,255,.26); }

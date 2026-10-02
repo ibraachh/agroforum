@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=14">
+<link rel="stylesheet" href="assets/css/style.css?v=16">
 <link rel="icon" type="image/png" href="assets/img/logo/logo.png">
 </head>
 <body>
@@ -197,7 +197,7 @@
 </section>
 
 <!-- ============ COUNTDOWN ============ -->
-<section class="countdown" id="countdown" aria-label="Foruma geri sayım" data-target="2026-10-08T09:00:00+04:00">
+<section class="countdown" id="countdown" aria-label="Foruma geri sayım" data-target="2026-10-09T09:00:00+04:00">
   <div class="container">
     <div class="countdown__head">
       <span class="countdown__eyebrow">Foruma qalan vaxt</span>
@@ -235,6 +235,41 @@
           <span>Bakı Forumları</span>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REELS ============ -->
+<section class="section reels-section" id="reels">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Video</span>
+      <h2>Forum anları</h2>
+      <p>Foruma dair qısa videolar — reel formatında.</p>
+    </div>
+  </div>
+  <div class="reels-marquee reveal" id="reelsMarquee">
+    <div class="reels-track" id="reelsTrack">
+      <button class="reel-card" type="button" data-src="assets/video/reels/reel-dogan.mp4" aria-label="Videonu aç">
+        <video src="assets/video/reels/reel-dogan.mp4" poster="assets/video/reels/reel-dogan.jpg" muted loop playsinline preload="none"></video>
+        <span class="reel-card__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+      </button>
+      <button class="reel-card" type="button" data-src="assets/video/reels/reel-atib.mp4" aria-label="Videonu aç">
+        <video src="assets/video/reels/reel-atib.mp4" poster="assets/video/reels/reel-atib.jpg" muted loop playsinline preload="none"></video>
+        <span class="reel-card__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+      </button>
+      <button class="reel-card" type="button" data-src="assets/video/reels/reel-nigar-cagiris.mp4" aria-label="Videonu aç">
+        <video src="assets/video/reels/reel-nigar-cagiris.mp4" poster="assets/video/reels/reel-nigar-cagiris.jpg" muted loop playsinline preload="none"></video>
+        <span class="reel-card__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+      </button>
+      <button class="reel-card" type="button" data-src="assets/video/reels/reel-nigar-1.mp4" aria-label="Videonu aç">
+        <video src="assets/video/reels/reel-nigar-1.mp4" poster="assets/video/reels/reel-nigar-1.jpg" muted loop playsinline preload="none"></video>
+        <span class="reel-card__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+      </button>
+      <button class="reel-card" type="button" data-src="assets/video/reels/reel-nigar-2.mp4" aria-label="Videonu aç">
+        <video src="assets/video/reels/reel-nigar-2.mp4" poster="assets/video/reels/reel-nigar-2.jpg" muted loop playsinline preload="none"></video>
+        <span class="reel-card__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+      </button>
     </div>
   </div>
 </section>
@@ -373,14 +408,25 @@
           <b>ATİB</b>
           <span>Azərbaycan Türkiyə İş Adamları Birliyi</span>
         </a>
+        <a class="partner" href="https://biznestv.az/" target="_blank" rel="noopener">
+          <div class="partner__logo"><img src="assets/img/sponsors/biznes-tv.png" alt="Biznes TV" loading="lazy"></div>
+          <b>Biznes TV</b>
+        </a>
         <a class="partner" href="https://www.agriconnect.com/" target="_blank" rel="noopener">
           <div class="partner__logo"><img src="assets/img/sponsors/agriconnect.png" alt="Agriconnect" loading="lazy"></div>
           <b>Agriconnect</b>
           <span>Aqrobiznes platforması</span>
         </a>
-        <a class="partner" href="https://biznestv.az/" target="_blank" rel="noopener">
-          <div class="partner__logo"><img src="assets/img/sponsors/biznes-tv.png" alt="Biznes TV" loading="lazy"></div>
-          <b>Biznes TV</b>
+      </div>
+    </div>
+
+    <!-- Baş sponsor -->
+    <div class="partner-group partner-group--hero reveal">
+      <h3 class="partner-group__title">Baş sponsor</h3>
+      <div class="partners">
+        <a class="partner" href="https://www.ziraatbank.az/" target="_blank" rel="noopener">
+          <div class="partner__logo"><img src="assets/img/sponsors/ziraat.png" alt="Ziraat Bank" loading="lazy"></div>
+          <b>Ziraat Bank</b>
         </a>
       </div>
     </div>
@@ -389,11 +435,6 @@
     <div class="partner-group reveal">
       <h3 class="partner-group__title">Rəsmi tərəfdaş</h3>
       <div class="partners">
-        <a class="partner" href="https://agro.gov.az/az" target="_blank" rel="noopener">
-          <div class="partner__logo"><img src="assets/img/sponsors/ministry.png" alt="Kənd Təsərrüfatı Nazirliyi" loading="lazy"></div>
-          <b>Kənd Təsərrüfatı Nazirliyi</b>
-          <span>Azərbaycan Respublikası</span>
-        </a>
         <a class="partner" href="http://aim.gov.az/az" target="_blank" rel="noopener">
           <div class="partner__logo"><img src="assets/img/sponsors/agrar-innovasiya.png" alt="Aqrar İnnovasiya Mərkəzi" loading="lazy"></div>
           <b>Aqrar İnnovasiya Mərkəzi</b>
@@ -402,9 +443,31 @@
       </div>
     </div>
 
-    <!-- Sponsor -->
+    <!-- Tərəfdaşlar -->
     <div class="partner-group reveal">
-      <h3 class="partner-group__title">Sponsor</h3>
+      <h3 class="partner-group__title">Tərəfdaşlar</h3>
+      <div class="partners">
+        <a class="partner" href="https://ask.org.az/" target="_blank" rel="noopener">
+          <div class="partner__logo"><img src="assets/img/sponsors/ask.png" alt="ASK" loading="lazy"></div>
+          <b>ASK</b>
+          <span>Azərbaycan Sahibkarlar Konfederasiyası</span>
+        </a>
+        <a class="partner" href="https://amcham.az/" target="_blank" rel="noopener">
+          <div class="partner__logo"><img src="assets/img/sponsors/amcham.png" alt="AMCHAM" loading="lazy"></div>
+          <b>AMCHAM</b>
+          <span>American Chamber of Commerce</span>
+        </a>
+        <a class="partner" href="https://www.tdtb.com.tr/" target="_blank" rel="noopener">
+          <div class="partner__logo"><img class="is-round" src="assets/img/sponsors/turkdunya.png" alt="Türk Dünyası Tarım Birliği" loading="lazy"></div>
+          <b>Türk Dünyası Tarım Birliği</b>
+          <span>Agricultural Union of Turkic States</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Sponsorlar -->
+    <div class="partner-group reveal">
+      <h3 class="partner-group__title">Sponsorlar</h3>
       <div class="partners">
         <div class="partner">
           <div class="partner__logo"><img src="assets/img/sponsors/elba.png" alt="ELBA" loading="lazy"></div>
@@ -415,13 +478,44 @@
           <div class="partner__logo"><img src="assets/img/sponsors/agro-union.png" alt="Agro Union" loading="lazy"></div>
           <b>Agro Union</b>
         </div>
+        <div class="partner">
+          <div class="partner__logo"><img src="assets/img/sponsors/aqromarket.png" alt="Aqromarket Servis" loading="lazy"></div>
+          <b>Aqromarket</b>
+          <span>Aqromarket Servis MMC</span>
+        </div>
       </div>
     </div>
 
-    <!-- Dəstəkçi -->
+    <!-- Dəstəkçilər -->
     <div class="partner-group reveal">
-      <h3 class="partner-group__title">Dəstəkçi</h3>
+      <h3 class="partner-group__title">Dəstəkçilər</h3>
       <div class="partners">
+        <div class="partner">
+          <div class="partner__logo"><img src="assets/img/sponsors/moongroup.png" alt="Moon Group" loading="lazy"></div>
+          <b>Moon Group</b>
+        </div>
+        <div class="partner">
+          <div class="partner__logo"><img src="assets/img/sponsors/agrolid.png" alt="Agro Lid" loading="lazy"></div>
+          <b>Agro Lid</b>
+        </div>
+        <div class="partner">
+          <div class="partner__logo"><img src="assets/img/sponsors/zirva-agro.png" alt="Zirvə Agro" loading="lazy"></div>
+          <b>Zirvə Agro</b>
+        </div>
+        <div class="partner">
+          <div class="partner__logo"><img src="assets/img/sponsors/matrixpro.png" alt="matrixpro" loading="lazy"></div>
+          <b>matrixpro</b>
+        </div>
+        <div class="partner">
+          <div class="partner__logo"><img src="assets/img/sponsors/farmwell.png" alt="Farmwell" loading="lazy"></div>
+          <b>Farmwell</b>
+          <span>Agriculture Consultancy</span>
+        </div>
+        <div class="partner">
+          <div class="partner__logo"><img src="assets/img/sponsors/royaltech.png" alt="Royaltech" loading="lazy"></div>
+          <b>Royaltech</b>
+          <span>Technology for Agriculture</span>
+        </div>
         <div class="partner">
           <div class="partner__logo"><img src="assets/img/sponsors/aky.png" alt="AKY Technology" loading="lazy"></div>
           <b>AKY Technology</b>
@@ -430,31 +524,17 @@
           <div class="partner__logo"><img src="assets/img/sponsors/sezer.png" alt="Sezer" loading="lazy"></div>
           <b>Sezer</b>
         </div>
-        <div class="partner">
-          <div class="partner__logo"><img src="assets/img/sponsors/agrolid.png" alt="Agro Lid" loading="lazy"></div>
-          <b>Agro Lid</b>
-        </div>
-        <div class="partner">
-          <div class="partner__logo"><img src="assets/img/sponsors/royaltech.png" alt="Royaltech" loading="lazy"></div>
-          <b>Royaltech</b>
-          <span>Technology for Agriculture</span>
-        </div>
       </div>
     </div>
 
-    <!-- Tərəfdaşlar -->
+    <!-- Bilet tərəfdaşı -->
     <div class="partner-group reveal">
-      <h3 class="partner-group__title">Tərəfdaşlar</h3>
+      <h3 class="partner-group__title">Bilet tərəfdaşı</h3>
       <div class="partners">
-        <a class="partner" href="https://www.tdtb.com.tr/" target="_blank" rel="noopener">
-          <div class="partner__logo"><img class="is-round" src="assets/img/sponsors/turkdunya.png" alt="Türk Dünyası Tarım Birliği" loading="lazy"></div>
-          <b>Türk Dünyası Tarım Birliği</b>
-          <span>Agricultural Union of Turkic States</span>
-        </a>
-        <a class="partner" href="https://amcham.az/" target="_blank" rel="noopener">
-          <div class="partner__logo"><img src="assets/img/sponsors/amcham.png" alt="AMCHAM" loading="lazy"></div>
-          <b>AMCHAM</b>
-          <span>American Chamber of Commerce</span>
+        <a class="partner partner--ticket" href="https://birbilet.az/az/" target="_blank" rel="noopener">
+          <div class="partner__logo"><img src="assets/img/logo/birbilet-logo.png" alt="BirBilet" loading="lazy"></div>
+          <b>BirBilet</b>
+          <span>Bilet satışı</span>
         </a>
       </div>
     </div>
@@ -484,18 +564,6 @@
           <div class="partner__logo"><img src="assets/img/sponsors/ky.png" alt="KY Agro Media" loading="lazy"></div>
           <b>KY Agro Media</b>
         </div>
-      </div>
-    </div>
-
-    <!-- Rəsmi bilet tərəfdaşı -->
-    <div class="partner-group reveal">
-      <h3 class="partner-group__title">Rəsmi bilet tərəfdaşı</h3>
-      <div class="partners">
-        <a class="partner partner--ticket" href="https://birbilet.az/az/" target="_blank" rel="noopener">
-          <div class="partner__logo"><img src="assets/img/logo/birbilet-logo.png" alt="BirBilet" loading="lazy"></div>
-          <b>BirBilet</b>
-          <span>Bilet satışı</span>
-        </a>
       </div>
     </div>
   </div>
@@ -1132,6 +1200,14 @@
   </div>
 </div>
 
+<!-- reel player modal -->
+<div class="reel-modal" id="reelModal" role="dialog" aria-modal="true" aria-label="Video">
+  <button type="button" class="reel-modal__close" id="reelClose" aria-label="Bağla">&times;</button>
+  <div class="reel-modal__stage">
+    <video id="reelVideo" controls playsinline></video>
+  </div>
+</div>
+
 <!-- search overlay -->
 <div class="searchbox" id="searchbox" role="dialog" aria-modal="true" aria-label="Saytda axtarış">
   <div class="searchbox__panel">
@@ -1152,7 +1228,7 @@
   <button class="lightbox__nav lightbox__nav--next" id="lbNext" aria-label="Növbəti">&#10095;</button>
 </div>
 
-<script src="assets/js/i18n.js?v=4"></script>
-<script src="assets/js/main.js?v=10"></script>
+<script src="assets/js/i18n.js?v=5"></script>
+<script src="assets/js/main.js?v=11"></script>
 </body>
 </html>
