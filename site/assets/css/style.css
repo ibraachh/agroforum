@@ -1016,6 +1016,9 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.18; color: var(--ink-900); font-weigh
 .agenda-speakers { list-style: none; margin: 9px 0 0; padding: 0; display: grid; gap: 7px; }
 .agenda-speakers li { position: relative; padding-left: 16px; color: var(--ink-700); font-size: .92rem; line-height: 1.4; }
 .agenda-speakers li::before { content: ""; position: absolute; left: 0; top: 8px; width: 6px; height: 6px; border-radius: 50%; background: var(--lime-500); }
+.agenda-speakers li .t { display: block; color: var(--ink-300); font-size: .84rem; margin-top: 2px; line-height: 1.4; }
+.agenda-award { margin: 12px 0 0; font-size: .82rem; font-weight: 700; color: var(--green-600); }
+.agenda-award::before { content: "★ "; color: var(--lime-500); }
 @media (max-width: 560px) {
   .agenda-item { grid-template-columns: 1fr; gap: 5px; }
   .agenda-item__time { padding-top: 0; }
