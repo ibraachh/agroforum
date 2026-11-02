@@ -359,6 +359,18 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.18; color: var(--ink-900); font-weigh
 .reg-card__partner img { height: 15px; width: auto; opacity: .9; }
 @media (max-width: 900px) { .f2026-head { grid-template-columns: 1fr; gap: 28px; } }
 
+/* 2026 past-edition poster (replaces the registration card) */
+.f2026-poster { align-self: start; }
+.f2026-poster .panel-slide__media { display: block; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-md); cursor: zoom-in; }
+.f2026-poster img { width: 100%; height: auto; display: block; }
+.f2026-poster .panel-slide__media:hover { box-shadow: var(--shadow-lg); }
+@media (max-width: 900px) { .f2026-poster { max-width: 420px; } }
+
+/* materials slider heading */
+.materials-head { max-width: 720px; margin: 36px 0 20px; }
+.materials-head h3 { font-size: clamp(1.4rem, 2.6vw, 1.9rem); margin: 12px 0 10px; color: var(--ink-900); }
+.materials-head p { color: var(--ink-500); margin: 0; }
+
 .soon-banner { position: relative; border-radius: 18px; overflow: hidden; box-shadow: var(--shadow-md); margin-bottom: 14px; }
 .soon-banner img { width: 100%; height: auto; display: block; }
 .soon-banner__badge {
@@ -1064,3 +1076,14 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.18; color: var(--ink-900); font-weigh
   font-size: 1.8rem; line-height: 1;
 }
 .reel-modal__close:hover { background: rgba(255,255,255,.26); }
+
+/* ============================================================
+   SPONSORSHIP — highlighted band (Task 4)
+   ============================================================ */
+#sponsorship.sponsorship--spot { background: linear-gradient(120deg, #fff7e2, #ffe7b0); position: relative; overflow: hidden; }
+#sponsorship.sponsorship--spot::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 4px; background: linear-gradient(90deg, var(--green-600), #e0a400); }
+#sponsorship.sponsorship--spot::after { content: ""; position: absolute; right: -80px; top: -90px; width: 320px; height: 320px; border-radius: 50%; background: rgba(224,164,0,.12); }
+#sponsorship .sponsor-cta { position: relative; z-index: 1; }
+#sponsorship .sponsor-cta__text .eyebrow { color: #b8860b; }
+#sponsorship .sponsor-cta__text h2 { font-size: clamp(1.9rem, 3.6vw, 2.7rem); }
+#sponsorship .sponsor-cta__text .eyebrow::before { background: #e0a400; }

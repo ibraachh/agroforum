@@ -12,7 +12,7 @@
     "Foto": { en: "Photo", tr: "Foto" },
     "Video": { en: "Video", tr: "Video" },
     "Beynəlxalq Aqrar Biznes Forumu": { en: "International Agro Business Forum", tr: "Uluslararası Agro İş Forumu" },
-    "8–10 Oktyabr 2026": { en: "8–10 October 2026", tr: "8–10 Ekim 2026" },
+    "8–9 Oktyabr 2026": { en: "8–9 October 2026", tr: "8–9 Ekim 2026" },
     "Radisson Hotel · Bakı": { en: "Radisson Hotel · Baku", tr: "Radisson Hotel · Bakü" },
     "Qeydiyyat": { en: "Register", tr: "Kayıt" },
     "Ana səhifə": { en: "Home", tr: "Ana sayfa" },
@@ -304,9 +304,16 @@
 
     /* ---------- gallery ---------- */
     "Forumdan görüntülər": { en: "Images from the forum", tr: "Forumdan görüntüler" },
-    "2023 və 2024 forumlarının açılış mərasimləri, panellər, sərgi zonası və B2B görüşlərindən seçilmiş anlar.":
-      { en: "Selected moments from the opening ceremonies, panels, exhibition area and B2B meetings of the 2023 and 2024 editions.",
-        tr: "2023 ve 2024 forumlarının açılış törenleri, panelleri, fuar alanı ve B2B görüşmelerinden seçilmiş anlar." },
+    "2026, 2024 və 2023 forumlarının açılış mərasimləri, panellər, sərgi zonası və B2B görüşlərindən seçilmiş anlar.":
+      { en: "Selected moments from the opening ceremonies, panels, exhibition area and B2B meetings of the 2026, 2024 and 2023 editions.",
+        tr: "2026, 2024 ve 2023 forumlarının açılış törenleri, panelleri, fuar alanı ve B2B görüşmelerinden seçilmiş anlar." },
+    "Materiallar": { en: "Materials", tr: "Materyaller" },
+    "Açılış və panel müzakirələri": { en: "Opening and panel discussions", tr: "Açılış ve panel tartışmaları" },
+    "Rəsmi açılış və 3 panelin posterləri. Sürüşdürün və ya postere toxunaraq tam ölçüdə baxın.":
+      { en: "Posters of the official opening and the three panels. Swipe or tap a poster to view full size.",
+        tr: "Resmi açılış ve 3 panelin posterleri. Kaydırın veya postere dokunarak tam boyutta görün." },
+    "Üçüncü buraxılış": { en: "Third edition", tr: "Üçüncü sayı" },
+    "Açılış": { en: "Opening", tr: "Açılış" },
     "2023 · Açılış mərasimi": { en: "2023 · Opening ceremony", tr: "2023 · Açılış töreni" },
     "2024 · İştirakçılar": { en: "2024 · Participants", tr: "2024 · Katılımcılar" },
     "2023 · Fəxri qonaqlar": { en: "2023 · Honorary guests", tr: "2023 · Onur konukları" },
