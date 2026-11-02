@@ -389,6 +389,8 @@
     "Dəqiqə": { en: "Minutes", tr: "Dakika" },
     "Saniyə": { en: "Seconds", tr: "Saniye" },
     "Forum başladı!": { en: "The forum has started!", tr: "Forum başladı!" },
+    "18 May 2027": { en: "18 May 2027", tr: "18 Mayıs 2027" },
+    "Bakı": { en: "Baku", tr: "Bakü" },
 
     /* ---------- partner group headings ---------- */
     "Təşkilatçılar": { en: "Organisers", tr: "Düzenleyenler" },

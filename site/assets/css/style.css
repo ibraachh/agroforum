@@ -881,8 +881,11 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.18; color: var(--ink-900); font-weigh
 /* ============================================================
    REGISTER CTA — red + floating sticky (Task 1)
    ============================================================ */
-.btn--book { background: #d92d20 !important; border-color: #d92d20 !important; color: #fff !important; box-shadow: 0 4px 14px rgba(217,45,32,.3); }
-.btn--book:hover { background: #b42318 !important; border-color: #b42318 !important; }
+/* registration paused until the new link is ready — greyed + inactive */
+.btn--book { background: #c7ccc9 !important; border-color: #c7ccc9 !important; color: #6b726e !important; box-shadow: none !important; cursor: default; pointer-events: none; }
+.btn--book:hover { background: #c7ccc9 !important; border-color: #c7ccc9 !important; transform: none !important; }
+/* the floating registration pill is purely a CTA — hide it while registration is off */
+.sticky-cta { display: none !important; }
 
 .sticky-cta {
   position: fixed; left: 24px; bottom: 24px; z-index: 90;
