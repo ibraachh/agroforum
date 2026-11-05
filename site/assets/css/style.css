@@ -410,6 +410,8 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.22; color: var(--ink-900); font-weigh
 }
 .panel-slide__media { display: block; cursor: zoom-in; background: var(--green-700); }
 .panel-slide__media img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block; }
+/* 2026 materials posters are portrait (4:5) — show the whole poster, no top/bottom crop */
+#f2026 .panel-slide__media img { aspect-ratio: 4 / 5; object-fit: contain; background: var(--green-700); }
 .panel-slide__media--empty {
   aspect-ratio: 1 / 1; display: grid; place-items: center; gap: 4px; cursor: default;
   background: radial-gradient(circle at 50% 32%, var(--green-600), var(--green-900));
