@@ -1092,3 +1092,15 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.22; color: var(--ink-900); font-weigh
 #sponsorship .sponsor-cta__text .eyebrow { color: #b8860b; }
 #sponsorship .sponsor-cta__text h2 { font-size: clamp(1.9rem, 3.6vw, 2.7rem); }
 #sponsorship .sponsor-cta__text .eyebrow::before { background: #e0a400; }
+
+/* ============================================================
+   "Made by BagTech" footer credit
+   ============================================================ */
+.footer__made {
+  display: flex; align-items: center; justify-content: center; gap: 8px; flex-wrap: wrap;
+  padding: 18px 0 30px; color: #7ba98a; font-size: .86rem;
+  border-top: 1px solid rgba(255,255,255,.08);
+}
+.footer__made a { display: inline-flex; align-items: center; opacity: .85; transition: opacity .2s; }
+.footer__made a:hover { opacity: 1; }
+.footer__made img { height: 20px; width: auto; display: block; }

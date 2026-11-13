@@ -348,6 +348,8 @@
     "Spikerlər": { en: "Speakers", tr: "Konuşmacılar" },
     "Bakı, Azərbaycan": { en: "Baku, Azerbaijan", tr: "Bakü, Azerbaycan" },
     "Biletlər:": { en: "Tickets:", tr: "Biletler:" },
+    "Bu sayt": { en: "This site is a", tr: "Bu site" },
+    "məhsuludur.": { en: "product.", tr: "ürünüdür." },
     "© 2023–2026 International Agro Business Forum. Bütün hüquqlar qorunur.":
       { en: "© 2023–2026 International Agro Business Forum. All rights reserved.",
         tr: "© 2023–2026 International Agro Business Forum. Tüm hakları saklıdır." },
