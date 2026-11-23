@@ -530,7 +530,6 @@
     } else {
       vids.forEach(function (v) { v.play && v.play(); });
     }
-
     // click a card → open the full video with sound in the modal
     var modal = document.getElementById("reelModal");
     var rv = document.getElementById("reelVideo");
