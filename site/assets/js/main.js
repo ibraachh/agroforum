@@ -403,7 +403,34 @@
     } else {
       vids.forEach(function (v) { v.play && v.play(); });
     }
+var prevBtn = document.getElementById("reelPrevBtn");
+    var nextBtn = document.getElementById("reelNextBtn");
+    var manualOffset = 0;
+    var stepPx = 260;
 
+    function applyManualOffset() {
+      var halfWidth = track.scrollWidth / 2;
+      if (halfWidth > 0) {
+        if (manualOffset > halfWidth) manualOffset = manualOffset % halfWidth;
+        if (manualOffset < -halfWidth) manualOffset = -(Math.abs(manualOffset) % halfWidth);
+      }
+      track.style.position = "relative";
+      track.style.transition = "left 0.3s ease";
+      track.style.left = manualOffset + "px";
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener("click", function () {
+        manualOffset += stepPx;
+        applyManualOffset();
+      });
+    }
+    if (nextBtn) {
+      nextBtn.addEventListener("click", function () {
+        manualOffset -= stepPx;
+        applyManualOffset();
+      });
+    }
     // click a card → open the full video with sound in the modal
     var modal = document.getElementById("reelModal");
     var rv = document.getElementById("reelVideo");
@@ -493,4 +520,26 @@
     sync();
     document.addEventListener("iabf:langchange", sync);
   })();
+})();
+(function () {
+  const pdfBtn = document.getElementById("forumInfoPdf");
+  if (!pdfBtn) return;
+
+  function syncPdfByLang() {
+    const lang = (document.documentElement.lang || "az").toLowerCase().startsWith("en") ? "en" : "az";
+    const azUrl = pdfBtn.getAttribute("data-pdf-az") || "assets/docs/abf-2027-az.pdf";
+    const enUrl = pdfBtn.getAttribute("data-pdf-en") || "assets/docs/abf-2027-en.pdf";
+    pdfBtn.href = lang === "en" ? enUrl : azUrl;
+  }
+
+  syncPdfByLang();
+
+  const observer = new MutationObserver(syncPdfByLang);
+  observer.observe(document.documentElement, { attributes: true, attributeFilter: ["lang"] });
+
+  document.addEventListener("click", function (e) {
+    if (e.target.closest("[data-lang], .lang-btn, .lang-switch")) {
+      setTimeout(syncPdfByLang, 50);
+    }
+  });
 })();
