@@ -394,6 +394,71 @@
     "18 May 2027": { en: "18 May 2027", tr: "18 Mayıs 2027" },
     "Bakı": { en: "Baku", tr: "Bakü" },
 
+    /* ---------- IV forum ticket banner ---------- */
+    "IV Beynəlxalq Aqrar Biznes Forum": { en: "IV International Agro Business Forum", tr: "IV Uluslararası Agro İş Forumu" },
+    "Biletinizi indidən əldə edin": { en: "Get your ticket now", tr: "Biletinizi şimdiden alın" },
+    "Növbəti forumun biletləri rəsmi bilet tərəfdaşı BirBilet üzərindən satışdadır.":
+      { en: "Tickets for the next forum are on sale via our official ticketing partner, BirBilet.",
+        tr: "Bir sonraki forumun biletleri resmi bilet ortağı BirBilet üzerinden satışta." },
+    "Bilet al": { en: "Buy a ticket", tr: "Bilet al" },
+    "Proqram, spikerlər və panel mövzuları tezliklə bu bölmədə açıqlanacaq.":
+      { en: "The programme, speakers and panel topics will be announced here soon.",
+        tr: "Program, konuşmacılar ve panel konuları yakında burada açıklanacak." },
+    "Biletlər": { en: "Tickets", tr: "Biletler" },
+    "2026 · Retrospektiv": { en: "2026 · Retrospective", tr: "2026 · Retrospektif" },
+    "2026-ya bax": { en: "View 2026", tr: "2026'ya bak" },
+    "2027 forumu": { en: "2027 edition", tr: "2027 forumu" },
+
+    /* ---------- hero 2027 ---------- */
+    "2027 · IV Forum": { en: "2027 · IV Forum", tr: "2027 · IV. Forum" },
+    "IV Beynəlxalq Aqrar Biznes Forumu 18 may 2027-ci ildə Bakıda keçiriləcək. Biletlər BirBilet üzərindən satışdadır.":
+      { en: "The IV International Agro Business Forum takes place in Baku on 18 May 2027. Tickets are on sale via BirBilet.",
+        tr: "IV. Uluslararası Agro İş Forumu 18 Mayıs 2027'de Bakü'de düzenlenecek. Biletler BirBilet üzerinden satışta." },
+
+    /* ---------- 3D ticket ---------- */
+    "Tarix": { en: "Date", tr: "Tarih" },
+    "Məkan": { en: "Venue", tr: "Mekan" },
+    "Şəhər": { en: "City", tr: "Şehir" },
+    "gün qaldı": { en: "days left", tr: "gün kaldı" },
+    "Bilet al →": { en: "Buy a ticket →", tr: "Bilet al →" },
+
+    /* ---------- news ---------- */
+    "Xəbərlər": { en: "News", tr: "Haberler" },
+    "Forumdan son xəbərlər": { en: "Latest news from the forum", tr: "Forumdan son haberler" },
+    "Anonslar və keçirilmiş forumlardan qısa xəbərlər.": { en: "Announcements and short news from past editions.", tr: "Duyurular ve geçmiş forumlardan kısa haberler." },
+    "Anons": { en: "Announcement", tr: "Duyuru" },
+    "IV Beynəlxalq Aqrar Biznes Forumu Bakıda keçiriləcək": { en: "The IV International Agro Business Forum will be held in Baku", tr: "IV Uluslararası Agro İş Forumu Bakü'de düzenlenecek" },
+    "Forum Radisson Hotel-də təşkil olunacaq. Biletlər rəsmi bilet tərəfdaşı BirBilet üzərindən satışdadır.":
+      { en: "The forum will take place at the Radisson Hotel. Tickets are on sale via our official ticketing partner, BirBilet.",
+        tr: "Forum Radisson Hotel'de düzenlenecek. Biletler resmi bilet ortağı BirBilet üzerinden satışta." },
+    "III forum Bakıda keçirildi": { en: "The III forum was held in Baku", tr: "III. forum Bakü'de düzenlendi" },
+    "8 ölkə, 64 yerli və xarici şirkət, 280 ziyarətçi; rəsmi açılış, 3 panel müzakirəsi və B2B görüşləri.":
+      { en: "8 countries, 64 local and international companies, 280 visitors; an official opening, 3 panel discussions and B2B meetings.",
+        tr: "8 ülke, 64 yerli ve yabancı şirket, 280 ziyaretçi; resmi açılış, 3 panel oturumu ve B2B görüşmeleri." },
+
+    /* ---------- partners (IV forum) ---------- */
+    "Tərəfdaşlar · 2027": { en: "Partners · 2027", tr: "Ortaklar · 2027" },
+    "IV Beynəlxalq Aqrar Biznes Forumun təşkilatçıları və tərəfdaşları. Digər təşkilatçı və tərəfdaşlar dəqiqləşdikcə bu bölməyə əlavə ediləcək.":
+      { en: "Organisers and partners of the IV International Agro Business Forum. Other organisers and partners will be added here as they are confirmed.",
+        tr: "IV Uluslararası Agro İş Forumu'nun düzenleyicileri ve ortakları. Diğer düzenleyici ve ortaklar netleştikçe bu bölüme eklenecek." },
+    "Tərəfdaşlar dəqiqləşdikcə əlavə ediləcək": { en: "Partners will be added as they are confirmed", tr: "Ortaklar netleştikçe eklenecek" },
+
+    /* ---------- reels buttons ---------- */
+    "Geri": { en: "Back", tr: "Geri" },
+    "İrəli": { en: "Next", tr: "İleri" },
+
+    /* ---------- 2026 event rows ---------- */
+    "8 ölkədən dövlət, beynəlxalq təşkilat və sahə nümayəndələri": { en: "Government, international organisation and industry representatives from 8 countries", tr: "8 ülkeden devlet, uluslararası kuruluş ve sektör temsilcileri" },
+    "Aqrar sahədə dövlət dəstəyi və maliyyə imkanlarına çıxış; aqrar istehsal vasitələri ilə təminat; daxili və xarici bazarlara çıxışın asanlaşdırılması.":
+      { en: "State support and access to finance in agriculture; supply of agricultural inputs; easier access to domestic and foreign markets.",
+        tr: "Tarımda devlet desteği ve finansmana erişim; tarımsal girdi temini; iç ve dış pazarlara erişimin kolaylaştırılması." },
+    "64 yerli və xarici şirkətin iştirakı ilə B2B görüşləri təşkil olundu.": { en: "B2B meetings were held with 64 local and international companies taking part.", tr: "64 yerli ve yabancı şirketin katılımıyla B2B görüşmeleri düzenlendi." },
+    "Forum 2027": { en: "Forum 2027", tr: "Forum 2027" },
+    "IV Beynəlxalq Aqrar Biznes Forumun biletləri": { en: "Tickets for the IV International Agro Business Forum are on sale via", tr: "IV Uluslararası Agro İş Forumu biletleri" },
+    "üzərindən satışdadır. İştirakçı, spiker və ya tərəfdaş olmaq üçün bizimlə əlaqə saxlayın.":
+      { en: "— contact us to take part as a participant, speaker or partner.",
+        tr: "üzerinden satışta. Katılımcı, konuşmacı veya ortak olmak için bizimle iletişime geçin." },
+
     /* ---------- partner group headings ---------- */
     "Təşkilatçılar": { en: "Organisers", tr: "Düzenleyenler" },
     "Sponsor": { en: "Sponsor", tr: "Sponsor" },

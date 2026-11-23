@@ -369,8 +369,88 @@
     });
   })();
 
-  /* ---------- REELS (infinite marquee + player) ---------- */
+  /* ---------- 3D TICKET (ticket banner): tilt + live "days left" ---------- */
   (function () {
+    var link = document.querySelector(".ticket3d");
+    if (!link) return;
+    var card = link.querySelector(".ticket3d__card");
+    var daysEl = document.getElementById("ticketDays");
+    var cd = document.getElementById("countdown");
+    var target = cd && cd.getAttribute("data-target");
+    function updateDays() {
+      if (!daysEl || !target) return;
+      var ms = new Date(target).getTime() - Date.now();
+      daysEl.textContent = ms > 0 ? String(Math.floor(ms / 86400000)) : "0";
+    }
+    updateDays();
+    setInterval(updateDays, 60000);
+
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var fine = window.matchMedia && window.matchMedia("(pointer: fine)").matches;
+    if (reduce || !fine) return; // touch screens keep the gentle CSS float
+    link.addEventListener("pointermove", function (e) {
+      var r = card.getBoundingClientRect();
+      var px = (e.clientX - r.left) / r.width, py = (e.clientY - r.top) / r.height;
+      link.classList.add("is-tilting");
+      card.style.setProperty("--ry", ((px - 0.5) * 18).toFixed(2) + "deg");
+      card.style.setProperty("--rx", ((0.5 - py) * 14).toFixed(2) + "deg");
+      card.style.setProperty("--mx", (px * 100).toFixed(1) + "%");
+      card.style.setProperty("--my", (py * 100).toFixed(1) + "%");
+    });
+    link.addEventListener("pointerleave", function () {
+      link.classList.remove("is-tilting");
+      card.style.setProperty("--rx", "0deg");
+      card.style.setProperty("--ry", "0deg");
+    });
+  })();
+
+  /* ---------- REELS: YouTube channel videos ----------
+     scripts/youtube-feed.sh (cron on the server) keeps assets/data/youtube.json
+     in sync with the forum's YouTube channel. Those videos go first in the
+     reels marquee; the local reels stay as the fallback/rest of the strip. */
+  (function () {
+    var track = document.getElementById("reelsTrack");
+    if (!track) return;
+    var started = false;
+    function start() { if (started) return; started = true; initReels(); }
+
+    function addYouTube(videos) {
+      if (started) return;
+      var first = track.firstChild;
+      videos.forEach(function (v) {
+        if (!v || !/^[A-Za-z0-9_-]{11}$/.test(v.id)) return;
+        var b = document.createElement("button");
+        b.type = "button";
+        b.className = "reel-card reel-card--yt";
+        b.setAttribute("data-yt", v.id);
+        if (v.short) b.setAttribute("data-short", "1");
+        b.setAttribute("aria-label", v.title || "YouTube");
+        var img = document.createElement("img");
+        img.src = "https://i.ytimg.com/vi/" + v.id + "/hqdefault.jpg";
+        img.alt = v.title || "";
+        img.loading = "lazy";
+        b.appendChild(img);
+        b.insertAdjacentHTML("beforeend",
+          '<span class="reel-card__yt" aria-hidden="true">YouTube</span>' +
+          '<span class="reel-card__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>');
+        track.insertBefore(b, first);
+      });
+    }
+
+    if (window.fetch) {
+      fetch("assets/data/youtube.json", { cache: "no-cache" })
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (d) { if (d && d.videos && d.videos.length) addYouTube(d.videos.slice(0, 12)); })
+        .catch(function () {})
+        .then(start);
+      setTimeout(start, 2500); // never hold the strip back on a slow network
+    } else {
+      start();
+    }
+  })();
+
+  /* ---------- REELS (infinite marquee + player) ---------- */
+  function initReels() {
     var marquee = document.getElementById("reelsMarquee");
     var track = document.getElementById("reelsTrack");
     if (!marquee || !track) return;
@@ -381,11 +461,58 @@
     cards.forEach(function (c) { track.appendChild(c.cloneNode(true)); });
 
     var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (!reduce) {
-      // duration scales with how many originals there are (keeps speed steady)
-      track.style.animationDuration = (cards.length * 7) + "s";
-      marquee.classList.add("is-animated");
+
+    // JS-driven marquee: keeps the endless auto-scroll, and lets the
+    // «Geri» / «İrəli» buttons nudge it by one card in either direction.
+    var half = 0, offset = 0, speed = 0, last = 0, target = null;
+    var hovered = false, visible = true;
+    function measure() {
+      half = track.scrollWidth / 2;
+      // same pace as the old CSS animation: half the track every (n × 7s)
+      speed = half / (cards.length * 7);
     }
+    function stepSize() {
+      var gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+      return cards[0].getBoundingClientRect().width + gap;
+    }
+    function wrap() {
+      if (half <= 0) return;
+      while (offset >= half) { offset -= half; if (target !== null) target -= half; }
+      while (offset < 0) { offset += half; if (target !== null) target += half; }
+    }
+    function frame(t) {
+      var dt = last ? Math.min((t - last) / 1000, 0.1) : 0;
+      last = t;
+      if (visible) {
+        if (target !== null) {
+          var d = target - offset;
+          offset += d * Math.min(1, dt * 9);
+          if (Math.abs(d) < 0.5) { offset = target; target = null; }
+        } else if (!hovered && !reduce) {
+          offset += speed * dt;
+        }
+        wrap();
+        track.style.transform = "translate3d(" + (-offset) + "px,0,0)";
+      }
+      requestAnimationFrame(frame);
+    }
+    function nudge(dir) {
+      var base = target !== null ? target : offset;
+      target = base + dir * stepSize();
+    }
+    measure();
+    window.addEventListener("resize", measure);
+    window.addEventListener("load", measure);
+    marquee.addEventListener("mouseenter", function () { hovered = true; });
+    marquee.addEventListener("mouseleave", function () { hovered = false; });
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver(function (en) { visible = en[0].isIntersecting; last = 0; }).observe(marquee);
+    }
+    var prevBtn = document.getElementById("reelsPrev");
+    var nextBtn = document.getElementById("reelsNext");
+    if (prevBtn) prevBtn.addEventListener("click", function () { nudge(-1); });
+    if (nextBtn) nextBtn.addEventListener("click", function () { nudge(1); });
+    requestAnimationFrame(frame);
 
     // autoplay the muted preview videos when they enter the viewport
     var vids = Array.prototype.slice.call(track.querySelectorAll("video"));
@@ -415,22 +542,45 @@
       document.body.style.overflow = "hidden";
       var p = rv.play(); if (p && p.catch) p.catch(function () {});
     }
+    var stage = modal && modal.querySelector(".reel-modal__stage");
+    function openYouTube(id, isShort) {
+      if (!modal || !stage) return;
+      var f = document.createElement("iframe");
+      f.className = "reel-modal__yt";
+      f.src = "https://www.youtube-nocookie.com/embed/" + id + "?autoplay=1&rel=0&playsinline=1";
+      f.title = "YouTube video";
+      f.setAttribute("allow", "autoplay; encrypted-media; picture-in-picture; fullscreen");
+      f.setAttribute("allowfullscreen", "");
+      if (rv) rv.style.display = "none";
+      stage.classList.toggle("is-wide", !isShort);
+      stage.appendChild(f);
+      modal.classList.add("is-open");
+      document.body.style.overflow = "hidden";
+    }
     function closeReel() {
-      if (!modal || !rv) return;
-      rv.pause(); rv.removeAttribute("src"); rv.load();
+      if (!modal) return;
+      if (rv) { rv.pause(); rv.removeAttribute("src"); rv.load(); rv.style.display = ""; }
+      if (stage) {
+        var f = stage.querySelector(".reel-modal__yt");
+        if (f) f.remove();
+        stage.classList.remove("is-wide");
+      }
       modal.classList.remove("is-open");
       document.body.style.overflow = "";
     }
     track.addEventListener("click", function (e) {
       var card = e.target.closest(".reel-card");
-      if (card) openReel(card.getAttribute("data-src"));
+      if (!card) return;
+      var yt = card.getAttribute("data-yt");
+      if (yt) openYouTube(yt, card.getAttribute("data-short") === "1");
+      else openReel(card.getAttribute("data-src"));
     });
     if (rClose) rClose.addEventListener("click", closeReel);
     if (modal) modal.addEventListener("click", function (e) { if (e.target === modal) closeReel(); });
     document.addEventListener("keydown", function (e) {
       if (e.key === "Escape" && modal && modal.classList.contains("is-open")) closeReel();
     });
-  })();
+  }
 
   /* ---------- PROGRAM MODAL ---------- */
   (function () {

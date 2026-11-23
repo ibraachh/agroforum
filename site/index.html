@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=23">
+<link rel="stylesheet" href="assets/css/style.css?v=34">
 <link rel="icon" type="image/png" href="assets/img/logo/logo.png">
 </head>
 <body>
@@ -56,10 +56,10 @@
     </div>
     <div class="masthead__cta">
       <div class="date-badge">
-        <b>8–9 Oktyabr 2026</b>
+        <b>18 May 2027</b>
         <span>Radisson Hotel · Bakı</span>
       </div>
-      <a class="btn btn--primary btn--book" href="https://birbilet.az/az/tedbir/beynelxalq-aqro-biznes-forum-2026" target="_blank" rel="noopener">Qeydiyyat</a>
+      <a class="btn btn--primary" href="https://birbilet.az/az/tedbir/iv-beynelxalq-aqrar-biznes-forum" target="_blank" rel="noopener">Bilet al</a>
     </div>
   </div>
 </header>
@@ -78,12 +78,13 @@
       </li>
       <li><a href="#top" class="is-active">Ana səhifə</a></li>
       <li><a href="#about">Forum haqqında</a></li>
+      <li><a href="#news">Xəbərlər</a></li>
       <li><a href="#editions">Forumlar</a></li>
       <li><a href="#y2026">2026</a></li>
-      <li><a href="#partners">Tərəfdaşlar</a></li>
-      <li><a href="#sponsorship">Sponsorluq</a></li>
       <li><a href="#y2024">2024</a></li>
       <li><a href="#y2023">2023</a></li>
+      <li><a href="#partners">Tərəfdaşlar</a></li>
+      <li><a href="#sponsors">Sponsorluq</a></li>
       <li><a href="#gallery">Qalereya</a></li>
       <li><a href="#contact">Əlaqə</a></li>
       <li class="navlist__extra">
@@ -115,7 +116,33 @@
 <section class="hero" id="top">
   <div class="slider" id="slider">
 
-    <div class="slide is-active">
+    <div class="slide slide--2027 is-active">
+      <div class="slide__media slide__media--brand">
+        <img class="slide__brand-icon" src="assets/img/logo/logo-icon.png" alt="" aria-hidden="true">
+      </div>
+      <div class="slide__inner">
+        <div class="container">
+          <div class="slide__box">
+            <span class="slide__tag">2027 · IV Forum</span>
+            <h2>International Agro Business Forum 2027</h2>
+            <p>IV Beynəlxalq Aqrar Biznes Forumu 18 may 2027-ci ildə Bakıda keçiriləcək. Biletlər BirBilet üzərindən satışdadır.</p>
+            <div class="slide__meta">
+              <div><svg viewBox="0 0 24 24"><path d="M7 2v2H5a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-2V2h-2v2H9V2H7zM5 9h14v10H5V9z"/></svg> 18 May 2027</div>
+              <div><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg> Radisson Hotel, Bakı</div>
+            </div>
+            <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center">
+              <a class="btn btn--buy" href="https://birbilet.az/az/tedbir/iv-beynelxalq-aqrar-biznes-forum" target="_blank" rel="noopener">
+                Bilet al
+                <svg class="btn--buy__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 11h11.2l-4.6-4.6L13 5l7 7-7 7-1.4-1.4 4.6-4.6H5z"/></svg>
+              </a>
+              <a class="btn btn--ghost" href="#tickets">Ətraflı məlumat</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide">
       <!-- на телефонах баннер с впечатанным текстом мешает заголовку — берём чистое фото -->
       <div class="slide__media"><picture>
         <source media="(max-width: 640px)" srcset="assets/img/2023/img3.jpg">
@@ -124,7 +151,7 @@
       <div class="slide__inner">
         <div class="container">
           <div class="slide__box">
-            <span class="slide__tag">2026 · Yeni Forum</span>
+            <span class="slide__tag">2026 · Retrospektiv</span>
             <h2>International Agro Business Forum 2026</h2>
             <p>Aqrar sahədə beynəlxalq əməkdaşlığın, innovasiyanın və investisiyanın Bakıda bir araya gəldiyi əsas platforma.</p>
             <div class="slide__meta">
@@ -132,8 +159,7 @@
               <div><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg> Radisson Hotel, Bakı</div>
             </div>
             <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center">
-              <a class="btn btn--primary btn--book" href="https://birbilet.az/az/tedbir/beynelxalq-aqro-biznes-forum-2026" target="_blank" rel="noopener">Qeydiyyat</a>
-              <a class="btn btn--ghost" href="#about">Ətraflı məlumat</a>
+              <a class="btn btn--ghost" href="#f2026">2026-ya bax</a>
             </div>
           </div>
         </div>
@@ -213,6 +239,58 @@
   </div>
 </section>
 
+<!-- ============ IV FORUM — BİLET BANNERİ ============ -->
+<section class="ticket-promo" id="tickets" aria-label="IV forum biletləri">
+  <div class="container ticket-promo__inner">
+    <div class="ticket-promo__main">
+      <span class="ticket-promo__eyebrow">IV Beynəlxalq Aqrar Biznes Forum</span>
+      <h2 class="ticket-promo__title">Biletinizi indidən əldə edin</h2>
+      <p class="ticket-promo__lead">Növbəti forumun biletləri rəsmi bilet tərəfdaşı BirBilet üzərindən satışdadır.</p>
+      <div class="ticket-promo__meta">
+        <span><svg viewBox="0 0 24 24"><path d="M7 2v2H5a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-2V2h-2v2H9V2H7zM5 9h14v10H5V9z"/></svg> 18 May 2027</span>
+        <span><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg> Radisson Hotel · Bakı</span>
+      </div>
+      <div class="ticket-promo__actions">
+        <a class="btn btn--buy" href="https://birbilet.az/az/tedbir/iv-beynelxalq-aqrar-biznes-forum" target="_blank" rel="noopener">
+          Bilet al
+          <svg class="btn--buy__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 11h11.2l-4.6-4.6L13 5l7 7-7 7-1.4-1.4 4.6-4.6H5z"/></svg>
+        </a>
+        <a class="ticket-promo__partner" href="https://birbilet.az/az/tedbir/iv-beynelxalq-aqrar-biznes-forum" target="_blank" rel="noopener">
+          <span>Rəsmi bilet tərəfdaşı</span>
+          <i class="brand-chip"><img src="assets/img/logo/birbilet-logo-trim.png" alt="BirBilet" loading="lazy"></i>
+        </a>
+      </div>
+      <aside class="ticket-promo__soon">
+        <span class="ticket-promo__soon-tag">Tezliklə</span>
+        <p>Proqram, spikerlər və panel mövzuları tezliklə bu bölmədə açıqlanacaq.</p>
+      </aside>
+    </div>
+    <a class="ticket3d" href="https://birbilet.az/az/tedbir/iv-beynelxalq-aqrar-biznes-forum" target="_blank" rel="noopener" aria-label="Bilet al — BirBilet">
+      <div class="ticket3d__card">
+        <div class="ticket3d__main">
+          <div class="ticket3d__top">
+            <img src="assets/img/logo/logo-icon.png" alt="">
+            <span class="ticket3d__kicker">IV Forum · 2027</span>
+          </div>
+          <b class="ticket3d__title">International Agro Business Forum</b>
+          <div class="ticket3d__rows">
+            <div><span>Tarix</span><b>18.05.2027</b></div>
+            <div><span>Məkan</span><b>Radisson Hotel</b></div>
+            <div><span>Şəhər</span><b>Bakı</b></div>
+          </div>
+        </div>
+        <div class="ticket3d__stub">
+          <b class="ticket3d__days" id="ticketDays">—</b>
+          <span class="ticket3d__days-label">gün qaldı</span>
+          <i class="ticket3d__barcode" aria-hidden="true"></i>
+          <span class="ticket3d__cta">Bilet al →</span>
+        </div>
+        <i class="ticket3d__shine" aria-hidden="true"></i>
+      </div>
+    </a>
+  </div>
+</section>
+
 <!-- ============ ABOUT ============ -->
 <section class="section section--tint" id="about">
   <div class="container">
@@ -278,6 +356,65 @@
         <video src="assets/video/reels/reel-vidadi.mp4" poster="assets/video/reels/reel-vidadi.jpg" muted loop playsinline preload="none"></video>
         <span class="reel-card__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
       </button>
+    </div>
+  </div>
+  <div class="container reels-nav">
+    <button class="reels-nav__btn" id="reelsPrev" type="button" aria-label="Geri">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.4 7.4 14 6l-6 6 6 6 1.4-1.4L10.8 12z"/></svg>
+      <span>Geri</span>
+    </button>
+    <button class="reels-nav__btn" id="reelsNext" type="button" aria-label="İrəli">
+      <span>İrəli</span>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.6 7.4 10 6l6 6-6 6-1.4-1.4L13.2 12z"/></svg>
+    </button>
+  </div>
+</section>
+
+<!-- ============ NEWS ============ -->
+<section class="section section--tint" id="news">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Xəbərlər</span>
+      <h2>Forumdan son xəbərlər</h2>
+      <p>Anonslar və keçirilmiş forumlardan qısa xəbərlər.</p>
+    </div>
+    <div class="news-grid reveal">
+      <a class="news-card news-card--lead" href="#tickets">
+        <div class="news-card__media"><img src="assets/img/2027/forum-2027.jpg" alt="IV Beynəlxalq Aqrar Biznes Forum" loading="lazy" onerror="this.onerror=null;this.src='assets/img/2026/gallery/g02.jpg'"></div>
+        <div class="news-card__body">
+          <div class="news-card__meta"><span class="news-card__tag">Anons</span><span class="news-card__date">18 May 2027</span></div>
+          <h3>IV Beynəlxalq Aqrar Biznes Forumu Bakıda keçiriləcək</h3>
+          <p>Forum Radisson Hotel-də təşkil olunacaq. Biletlər rəsmi bilet tərəfdaşı BirBilet üzərindən satışdadır.</p>
+          <span class="news-card__more">Bilet al</span>
+        </div>
+      </a>
+      <a class="news-card" href="#f2026">
+        <div class="news-card__media"><img src="assets/img/2026/gallery/g01.jpg" alt="International Agro Business Forum 2026" loading="lazy"></div>
+        <div class="news-card__body">
+          <div class="news-card__meta"><span class="news-card__tag">Xəbər</span><span class="news-card__date">8–9 Oktyabr 2026</span></div>
+          <h3>International Agro Business Forum 2026</h3>
+          <p>8 ölkə, 64 yerli və xarici şirkət, 280 ziyarətçi; rəsmi açılış, 3 panel müzakirəsi və B2B görüşləri.</p>
+          <span class="news-card__more">Ətraflı bax</span>
+        </div>
+      </a>
+      <a class="news-card" href="#f2024">
+        <div class="news-card__media"><img src="assets/img/2024/img5.jpg" alt="International Agro Business Forum 2024" loading="lazy"></div>
+        <div class="news-card__body">
+          <div class="news-card__meta"><span class="news-card__tag">Xəbər</span><span class="news-card__date">20–21 Fevral 2024</span></div>
+          <h3>International Agro Business Forum 2024</h3>
+          <p>Kənd Təsərrüfatı Nazirliyi və KOBİA tərəfdaşlığı ilə 30-a yaxın şirkət, 3 panel müzakirəsi və qardaş ölkələrdən yüksək səviyyəli iştirak.</p>
+          <span class="news-card__more">Ətraflı bax</span>
+        </div>
+      </a>
+      <a class="news-card" href="#f2023">
+        <div class="news-card__media"><img src="assets/img/2023/img6.jpg" alt="International Agro Business Forum 2023" loading="lazy"></div>
+        <div class="news-card__body">
+          <div class="news-card__meta"><span class="news-card__tag">Xəbər</span><span class="news-card__date">28 Fevral – 1 Mart 2023</span></div>
+          <h3>International Agro Business Forum 2023</h3>
+          <p>10 ölkə, 55 yerli və xarici şirkət, 900-dən çox peşəkar ziyarətçi — beynəlxalq aqrar əməkdaşlığın təməli qoyuldu.</p>
+          <span class="news-card__more">Ətraflı bax</span>
+        </div>
+      </a>
     </div>
   </div>
 </section>
@@ -359,12 +496,48 @@
       </aside>
     </div>
 
-    <div class="ribbon reveal" style="background:var(--green-800);border-radius:var(--radius);overflow:hidden;margin-bottom:32px">
+    <div class="ribbon reveal" style="background:var(--green-700);border-radius:var(--radius);overflow:hidden;margin-bottom:38px">
       <div class="container" style="padding:0">
         <div class="ribbon__item"><b>2</b><span>Forum günü</span></div>
         <div class="ribbon__item"><b>8</b><span>İştirakçı ölkə</span></div>
         <div class="ribbon__item"><b>64</b><span>Yerli & xarici şirkət</span></div>
         <div class="ribbon__item"><b>280</b><span>Ziyarətçi</span></div>
+      </div>
+    </div>
+
+    <div class="doclist reveal" style="margin-bottom:38px">
+      <div class="docrow">
+        <div class="doctag">
+          <span class="doctag__type">Xəbər</span>
+          <span class="doctag__sub">Açılış</span>
+          <span class="doctag__date">08.10.2026</span>
+        </div>
+        <div class="docrow__body">
+          <h3>Rəsmi açılış mərasimi</h3>
+          <p>8 ölkədən dövlət, beynəlxalq təşkilat və sahə nümayəndələri</p>
+        </div>
+      </div>
+      <div class="docrow">
+        <div class="doctag">
+          <span class="doctag__type">Panel</span>
+          <span class="doctag__sub">3 sessiya</span>
+          <span class="doctag__date">08–09.10.2026</span>
+        </div>
+        <div class="docrow__body">
+          <h3>Üç istiqamətdə panel müzakirələri</h3>
+          <p>Aqrar sahədə dövlət dəstəyi və maliyyə imkanlarına çıxış; aqrar istehsal vasitələri ilə təminat; daxili və xarici bazarlara çıxışın asanlaşdırılması.</p>
+        </div>
+      </div>
+      <div class="docrow">
+        <div class="doctag">
+          <span class="doctag__type">Sərgi</span>
+          <span class="doctag__sub">B2B</span>
+          <span class="doctag__date">08–09.10.2026</span>
+        </div>
+        <div class="docrow__body">
+          <h3>Şəbəkələşmə və sərgi imkanları</h3>
+          <p>64 yerli və xarici şirkətin iştirakı ilə B2B görüşləri təşkil olundu.</p>
+        </div>
       </div>
     </div>
 
@@ -439,236 +612,66 @@
         <button class="pslider-arrow pslider-arrow--next" aria-label="Növbəti">›</button>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- ============ PARTNERS (2026) ============ -->
-<section class="section" id="partners">
-  <div class="container">
-    <div class="section-head reveal">
+    <div class="materials-head reveal">
       <span class="eyebrow">Tərəfdaşlar · 2026</span>
-      <h2>Təşkilatçılar və tərəfdaşlar</h2>
-      <p>Forum dövlət qurumları, beynəlxalq təşkilatlar və sahə assosiasiyalarının birgə dəstəyi ilə keçirilir.</p>
+      <h3>Təşkilatçılar, sponsorlar və tərəfdaşlar</h3>
     </div>
-    <!-- Təşkilatçılar -->
-    <div class="partner-group reveal">
-      <h3 class="partner-group__title">Təşkilatçılar</h3>
-      <div class="partners">
-        <a class="partner" href="https://atib.az/" target="_blank" rel="noopener">
-          <div class="partner__logo"><img src="assets/img/sponsors/atib.png" alt="ATİB" loading="lazy"></div>
-          <b>ATİB</b>
-          <span>Azərbaycan Türkiyə İş Adamları Birliyi</span>
-        </a>
-        <a class="partner" href="https://biznestv.az/" target="_blank" rel="noopener">
-          <div class="partner__logo"><img src="assets/img/sponsors/biznes-tv.png" alt="Biznes TV" loading="lazy"></div>
-          <b>Biznes TV</b>
-        </a>
-        <a class="partner" href="https://www.agriconnect.com/" target="_blank" rel="noopener">
-          <div class="partner__logo"><img src="assets/img/sponsors/agriconnect.png" alt="Agriconnect" loading="lazy"></div>
-          <b>Agriconnect</b>
-          <span>Aqrobiznes platforması</span>
-        </a>
+    <div class="logo-marquee reveal">
+      <div class="logo-marquee__track">
+          <a class="logo-chip" href="https://atib.az/" target="_blank" rel="noopener"><img src="assets/img/sponsors/atib.png" alt="ATİB" loading="lazy"><span>ATİB</span></a>
+          <a class="logo-chip" href="https://biznestv.az/" target="_blank" rel="noopener"><img src="assets/img/sponsors/biznes-tv.png" alt="Biznes TV" loading="lazy"><span>Biznes TV</span></a>
+          <a class="logo-chip" href="https://www.agriconnect.com/" target="_blank" rel="noopener"><img src="assets/img/sponsors/agriconnect.png" alt="Agriconnect" loading="lazy"><span>Agriconnect</span></a>
+          <a class="logo-chip" href="https://www.ziraatbank.az/" target="_blank" rel="noopener"><img src="assets/img/sponsors/ziraat.png?v=2" alt="Ziraat Bank" loading="lazy"><span>Ziraat Bank</span></a>
+          <a class="logo-chip" href="http://aim.gov.az/az" target="_blank" rel="noopener"><img src="assets/img/sponsors/agrar-innovasiya.png" alt="Aqrar İnnovasiya Mərkəzi" loading="lazy"><span>Aqrar İnnovasiya Mərkəzi</span></a>
+          <a class="logo-chip" href="https://asf.gov.az/" target="_blank" rel="noopener"><img src="assets/img/sponsors/aqrar-sigorta.png" alt="Aqrar Sığorta Fondu" loading="lazy"><span>Aqrar Sığorta Fondu</span></a>
+          <a class="logo-chip" href="https://ask.org.az/" target="_blank" rel="noopener"><img src="assets/img/sponsors/ask.png" alt="ASK" loading="lazy"><span>ASK</span></a>
+          <a class="logo-chip" href="https://amcham.az/" target="_blank" rel="noopener"><img src="assets/img/sponsors/amcham.png" alt="AMCHAM" loading="lazy"><span>AMCHAM</span></a>
+          <a class="logo-chip" href="https://www.tdtb.com.tr/" target="_blank" rel="noopener"><img class="is-round" src="assets/img/sponsors/turkdunya.png" alt="Türk Dünyası Tarım Birliği" loading="lazy"><span>Türk Dünyası Tarım Birliği</span></a>
+          <div class="logo-chip"><img src="assets/img/sponsors/fayda.png" alt="Fayda" loading="lazy"><span>Fayda</span></div>
+          <div class="logo-chip"><img src="assets/img/sponsors/elba.png" alt="ELBA" loading="lazy"><span>ELBA</span></div>
+          <a class="logo-chip" href="https://agrounion.az/" target="_blank" rel="noopener"><img src="assets/img/sponsors/agro-union.png" alt="Agro Union" loading="lazy"><span>Agro Union</span></a>
+          <a class="logo-chip" href="https://agromarket.az/" target="_blank" rel="noopener"><img src="assets/img/sponsors/aqromarket.png" alt="Aqromarket Servis" loading="lazy"><span>Aqromarket</span></a>
+          <a class="logo-chip" href="https://moongroup.az/" target="_blank" rel="noopener"><img src="assets/img/sponsors/moongroup.png" alt="Moon Group" loading="lazy"><span>Moon Group</span></a>
+          <div class="logo-chip"><img src="assets/img/sponsors/agrolid.png" alt="Agro Lid" loading="lazy"><span>Agro Lid</span></div>
+          <a class="logo-chip" href="https://www.zirveagro.az/" target="_blank" rel="noopener"><img src="assets/img/sponsors/zirva-agro.png" alt="Zirvə Agro" loading="lazy"><span>Zirvə Agro</span></a>
+          <a class="logo-chip" href="https://matrixpro.shop/" target="_blank" rel="noopener"><img src="assets/img/sponsors/matrixpro.png" alt="matrixpro" loading="lazy"><span>matrixpro</span></a>
+          <a class="logo-chip" href="https://farmwell-advisory.com/" target="_blank" rel="noopener"><img src="assets/img/sponsors/farmwell.png" alt="Farmwell" loading="lazy"><span>Farmwell</span></a>
+          <a class="logo-chip" href="https://royaltech.net/" target="_blank" rel="noopener"><img src="assets/img/sponsors/royaltech.png" alt="Royaltech" loading="lazy"><span>Royaltech</span></a>
+          <a class="logo-chip" href="https://www.akytechnology.com/en/" target="_blank" rel="noopener"><img src="assets/img/sponsors/aky.png" alt="AKY Technology" loading="lazy"><span>AKY Technology</span></a>
+          <a class="logo-chip" href="https://www.sezermac.com/" target="_blank" rel="noopener"><img src="assets/img/sponsors/sezer.png" alt="Sezer" loading="lazy"><span>Sezer</span></a>
+          <a class="logo-chip" href="https://birbilet.az/az/" target="_blank" rel="noopener"><img src="assets/img/logo/birbilet-logo.png" alt="BirBilet" loading="lazy"><span>BirBilet</span></a>
+          <a class="logo-chip" href="https://arb24.az/" target="_blank" rel="noopener"><img src="assets/img/sponsors/arb24.png" alt="arb24" loading="lazy"><span>arb24</span></a>
+          <a class="logo-chip" href="https://www.trend.az/" target="_blank" rel="noopener"><img src="assets/img/sponsors/trend.png" alt="Trend" loading="lazy"><span>Trend</span></a>
+          <div class="logo-chip"><img src="assets/img/sponsors/serahaber.png" alt="SeraHaber" loading="lazy"><span>SeraHaber</span></div>
+          <div class="logo-chip"><img src="assets/img/sponsors/ky.png" alt="KY Agro Media" loading="lazy"><span>KY Agro Media</span></div>
+          <a class="logo-chip" href="https://atib.az/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><img src="assets/img/sponsors/atib.png" alt="" loading="lazy"><span>ATİB</span></a>
+          <a class="logo-chip" href="https://biznestv.az/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><img src="assets/img/sponsors/biznes-tv.png" alt="" loading="lazy"><span>Biznes TV</span></a>
+          <a class="logo-chip" href="https://www.agriconnect.com/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><img src="assets/img/sponsors/agriconnect.png" alt="" loading="lazy"><span>Agriconnect</span></a>
+          <a class="logo-chip" href="https://www.ziraatbank.az/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><img src="assets/img/sponsors/ziraat.png?v=2" alt="" loading="lazy"><span>Ziraat Bank</span></a>
+          <a class="logo-chip" href="http://aim.gov.az/az" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><img src="assets/img/sponsors/agrar-innovasiya.png" alt="" loading="lazy"><span>Aqrar İnnovasiya Mərkəzi</span></a>
+          <a class="logo-chip" href="https://asf.gov.az/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><img src="assets/img/sponsors/aqrar-sigorta.png" alt="" loading="lazy"><span>Aqrar Sığorta Fondu</span></a>
+          <a class="logo-chip" href="https://ask.org.az/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><img src="assets/img/sponsors/ask.png" alt="" loading="lazy"><span>ASK</span></a>
+          <a class="logo-chip" href="https://amcham.az/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><img src="assets/img/sponsors/amcham.png" alt="" loading="lazy"><span>AMCHAM</span></a>
+          <a class="logo-chip" href="https://www.tdtb.com.tr/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><img class="is-round" src="assets/img/sponsors/turkdunya.png" alt="" loading="lazy"><span>Türk Dünyası Tarım Birliği</span></a>
+          <div class="logo-chip" aria-hidden="true" tabindex="-1"><img src="assets/img/sponsors/fayda.png" alt="" loading="lazy"><span>Fayda</span></div>
+          <div class="logo-chip" aria-hidden="true" tabindex="-1"><img src="assets/img/sponsors/elba.png" alt="" loading="lazy"><span>ELBA</span></div>
+          <a class="logo-chip" href="https://agrounion.az/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><img src="assets/img/sponsors/agro-union.png" alt="" loading="lazy"><span>Agro Union</span></a>
+          <a class="logo-chip" href="https://agromarket.az/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><img src="assets/img/sponsors/aqromarket.png" alt="" loading="lazy"><span>Aqromarket</span></a>
+          <a class="logo-chip" href="https://moongroup.az/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><img src="assets/img/sponsors/moongroup.png" alt="" loading="lazy"><span>Moon Group</span></a>
+          <div class="logo-chip" aria-hidden="true" tabindex="-1"><img src="assets/img/sponsors/agrolid.png" alt="" loading="lazy"><span>Agro Lid</span></div>
+          <a class="logo-chip" href="https://www.zirveagro.az/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><img src="assets/img/sponsors/zirva-agro.png" alt="" loading="lazy"><span>Zirvə Agro</span></a>
+          <a class="logo-chip" href="https://matrixpro.shop/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><img src="assets/img/sponsors/matrixpro.png" alt="" loading="lazy"><span>matrixpro</span></a>
+          <a class="logo-chip" href="https://farmwell-advisory.com/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><img src="assets/img/sponsors/farmwell.png" alt="" loading="lazy"><span>Farmwell</span></a>
+          <a class="logo-chip" href="https://royaltech.net/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><img src="assets/img/sponsors/royaltech.png" alt="" loading="lazy"><span>Royaltech</span></a>
+          <a class="logo-chip" href="https://www.akytechnology.com/en/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><img src="assets/img/sponsors/aky.png" alt="" loading="lazy"><span>AKY Technology</span></a>
+          <a class="logo-chip" href="https://www.sezermac.com/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><img src="assets/img/sponsors/sezer.png" alt="" loading="lazy"><span>Sezer</span></a>
+          <a class="logo-chip" href="https://birbilet.az/az/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><img src="assets/img/logo/birbilet-logo.png" alt="" loading="lazy"><span>BirBilet</span></a>
+          <a class="logo-chip" href="https://arb24.az/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><img src="assets/img/sponsors/arb24.png" alt="" loading="lazy"><span>arb24</span></a>
+          <a class="logo-chip" href="https://www.trend.az/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><img src="assets/img/sponsors/trend.png" alt="" loading="lazy"><span>Trend</span></a>
+          <div class="logo-chip" aria-hidden="true" tabindex="-1"><img src="assets/img/sponsors/serahaber.png" alt="" loading="lazy"><span>SeraHaber</span></div>
+          <div class="logo-chip" aria-hidden="true" tabindex="-1"><img src="assets/img/sponsors/ky.png" alt="" loading="lazy"><span>KY Agro Media</span></div>
       </div>
-    </div>
-
-    <!-- Baş sponsor -->
-    <div class="partner-group partner-group--hero reveal">
-      <h3 class="partner-group__title">Baş sponsor</h3>
-      <div class="partners">
-        <a class="partner" href="https://www.ziraatbank.az/" target="_blank" rel="noopener">
-          <div class="partner__logo"><img src="assets/img/sponsors/ziraat.png?v=2" alt="Ziraat Bank" loading="lazy"></div>
-          <b>Ziraat Bank</b>
-        </a>
-      </div>
-    </div>
-
-    <!-- Rəsmi tərəfdaş -->
-    <div class="partner-group reveal">
-      <h3 class="partner-group__title">Rəsmi tərəfdaş</h3>
-      <div class="partners">
-        <a class="partner" href="http://aim.gov.az/az" target="_blank" rel="noopener">
-          <div class="partner__logo"><img src="assets/img/sponsors/agrar-innovasiya.png" alt="Aqrar İnnovasiya Mərkəzi" loading="lazy"></div>
-          <b>Aqrar İnnovasiya Mərkəzi</b>
-          <span>Kənd Təsərrüfatı Nazirliyi</span>
-        </a>
-      </div>
-    </div>
-
-    <!-- Tərəfdaşlar -->
-    <div class="partner-group reveal">
-      <h3 class="partner-group__title">Tərəfdaşlar</h3>
-      <div class="partners">
-        <a class="partner" href="https://asf.gov.az/" target="_blank" rel="noopener">
-          <div class="partner__logo"><img src="assets/img/sponsors/aqrar-sigorta.png" alt="Aqrar Sığorta Fondu" loading="lazy"></div>
-          <b>Aqrar Sığorta Fondu</b>
-        </a>
-        <a class="partner" href="https://ask.org.az/" target="_blank" rel="noopener">
-          <div class="partner__logo"><img src="assets/img/sponsors/ask.png" alt="ASK" loading="lazy"></div>
-          <b>ASK</b>
-          <span>Azərbaycan Sahibkarlar Konfederasiyası</span>
-        </a>
-        <a class="partner" href="https://amcham.az/" target="_blank" rel="noopener">
-          <div class="partner__logo"><img src="assets/img/sponsors/amcham.png" alt="AMCHAM" loading="lazy"></div>
-          <b>AMCHAM</b>
-          <span>American Chamber of Commerce</span>
-        </a>
-        <a class="partner" href="https://www.tdtb.com.tr/" target="_blank" rel="noopener">
-          <div class="partner__logo"><img class="is-round" src="assets/img/sponsors/turkdunya.png" alt="Türk Dünyası Tarım Birliği" loading="lazy"></div>
-          <b>Türk Dünyası Tarım Birliği</b>
-          <span>Agricultural Union of Turkic States</span>
-        </a>
-        <div class="partner">
-          <div class="partner__logo"><img src="assets/img/sponsors/fayda.png" alt="Fayda" loading="lazy"></div>
-          <b>Fayda</b>
-          <span>İş Adamları Platforması</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Sponsorlar -->
-    <div class="partner-group reveal">
-      <h3 class="partner-group__title">Sponsorlar</h3>
-      <div class="partners">
-        <div class="partner">
-          <div class="partner__logo"><img src="assets/img/sponsors/elba.png" alt="ELBA" loading="lazy"></div>
-          <b>ELBA</b>
-          <span>Torpağınızın qoruyucusu</span>
-        </div>
-        <a class="partner" href="https://agrounion.az/" target="_blank" rel="noopener">
-          <div class="partner__logo"><img src="assets/img/sponsors/agro-union.png" alt="Agro Union" loading="lazy"></div>
-          <b>Agro Union</b>
-        </a>
-        <a class="partner" href="https://agromarket.az/" target="_blank" rel="noopener">
-          <div class="partner__logo"><img src="assets/img/sponsors/aqromarket.png" alt="Aqromarket Servis" loading="lazy"></div>
-          <b>Aqromarket</b>
-          <span>Aqromarket Servis MMC</span>
-        </a>
-      </div>
-    </div>
-
-    <!-- Dəstəkçilər -->
-    <div class="partner-group reveal">
-      <h3 class="partner-group__title">Dəstəkçilər</h3>
-      <div class="partners">
-        <a class="partner" href="https://moongroup.az/" target="_blank" rel="noopener">
-          <div class="partner__logo"><img src="assets/img/sponsors/moongroup.png" alt="Moon Group" loading="lazy"></div>
-          <b>Moon Group</b>
-        </a>
-        <div class="partner">
-          <div class="partner__logo"><img src="assets/img/sponsors/agrolid.png" alt="Agro Lid" loading="lazy"></div>
-          <b>Agro Lid</b>
-        </div>
-        <a class="partner" href="https://www.zirveagro.az/" target="_blank" rel="noopener">
-          <div class="partner__logo"><img src="assets/img/sponsors/zirva-agro.png" alt="Zirvə Agro" loading="lazy"></div>
-          <b>Zirvə Agro</b>
-        </a>
-        <a class="partner" href="https://matrixpro.shop/" target="_blank" rel="noopener">
-          <div class="partner__logo"><img src="assets/img/sponsors/matrixpro.png" alt="matrixpro" loading="lazy"></div>
-          <b>matrixpro</b>
-        </a>
-        <a class="partner" href="https://farmwell-advisory.com/" target="_blank" rel="noopener">
-          <div class="partner__logo"><img src="assets/img/sponsors/farmwell.png" alt="Farmwell" loading="lazy"></div>
-          <b>Farmwell</b>
-          <span>Agriculture Consultancy</span>
-        </a>
-        <a class="partner" href="https://royaltech.net/" target="_blank" rel="noopener">
-          <div class="partner__logo"><img src="assets/img/sponsors/royaltech.png" alt="Royaltech" loading="lazy"></div>
-          <b>Royaltech</b>
-          <span>Technology for Agriculture</span>
-        </a>
-        <a class="partner" href="https://www.akytechnology.com/en/" target="_blank" rel="noopener">
-          <div class="partner__logo"><img src="assets/img/sponsors/aky.png" alt="AKY Technology" loading="lazy"></div>
-          <b>AKY Technology</b>
-        </a>
-        <a class="partner" href="https://www.sezermac.com/" target="_blank" rel="noopener">
-          <div class="partner__logo"><img src="assets/img/sponsors/sezer.png" alt="Sezer" loading="lazy"></div>
-          <b>Sezer</b>
-        </a>
-      </div>
-    </div>
-
-    <!-- Bilet tərəfdaşı -->
-    <div class="partner-group reveal">
-      <h3 class="partner-group__title">Bilet tərəfdaşı</h3>
-      <div class="partners">
-        <a class="partner partner--ticket" href="https://birbilet.az/az/" target="_blank" rel="noopener">
-          <div class="partner__logo"><img src="assets/img/logo/birbilet-logo.png" alt="BirBilet" loading="lazy"></div>
-          <b>BirBilet</b>
-          <span>Bilet satışı</span>
-        </a>
-      </div>
-    </div>
-
-    <!-- Media tərəfdaşları -->
-    <div class="partner-group reveal">
-      <h3 class="partner-group__title">Media tərəfdaşları</h3>
-      <div class="partners">
-        <a class="partner" href="https://biznestv.az/" target="_blank" rel="noopener">
-          <div class="partner__logo"><img src="assets/img/sponsors/biznes-tv.png" alt="Biznes TV" loading="lazy"></div>
-          <b>Biznes TV</b>
-        </a>
-        <a class="partner" href="https://arb24.az/" target="_blank" rel="noopener">
-          <div class="partner__logo"><img src="assets/img/sponsors/arb24.png" alt="arb24" loading="lazy"></div>
-          <b>arb24</b>
-        </a>
-        <a class="partner" href="https://www.trend.az/" target="_blank" rel="noopener">
-          <div class="partner__logo"><img src="assets/img/sponsors/trend.png" alt="Trend" loading="lazy"></div>
-          <b>Trend</b>
-          <span>Trend News Agency</span>
-        </a>
-        <div class="partner">
-          <div class="partner__logo"><img src="assets/img/sponsors/serahaber.png" alt="SeraHaber" loading="lazy"></div>
-          <b>SeraHaber</b>
-        </div>
-        <div class="partner">
-          <div class="partner__logo"><img src="assets/img/sponsors/ky.png" alt="KY Agro Media" loading="lazy"></div>
-          <b>KY Agro Media</b>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ SPONSORSHIP ============ -->
-<section class="section sponsorship--spot" id="sponsorship">
-  <div class="container">
-    <div class="sponsor-cta reveal">
-      <div class="sponsor-cta__text">
-        <span class="eyebrow">Sponsorluq</span>
-        <h2>Foruma sponsor olun</h2>
-        <p>International Agro Business Forum aqrar sahədə qərar verən tərəfləri — dövlət qurumlarını, investorları, istehsalçıları və beynəlxalq şirkətləri bir araya gətirir. Sponsorluq brendinizi məhz bu auditoriyaya birbaşa təqdim etmək imkanıdır.</p>
-
-        <div class="sponsor-stats">
-          <div><b>3K+</b><span>peşəkar ziyarətçi</span></div>
-          <div><b>85+</b><span>yerli & xarici şirkət</span></div>
-          <div><b>10+</b><span>iştirakçı ölkə</span></div>
-        </div>
-
-        <ul class="sponsor-benefits">
-          <li><svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg> Loqonuz forumun rəsmi materiallarında, saytda və səhnə fonunda</li>
-          <li><svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg> Sərgi zonasında stend və məhsul təqdimatı</li>
-          <li><svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg> Panel müzakirələrində çıxış imkanı</li>
-          <li><svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg> İştirakçılarla birbaşa B2B görüşlər</li>
-          <li><svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg> Media tərəfdaşlarımızda əhatə</li>
-        </ul>
-      </div>
-
-      <aside class="sponsor-card">
-        <span class="sponsor-card__label">Sponsorluq paketi</span>
-        <h3>Şərtləri öyrənin</h3>
-        <p>Sponsorluq paketləri və imkanlar barədə ətraflı məlumat üçün bizimlə əlaqə saxlayın — şirkətinizə uyğun formatı birlikdə seçək.</p>
-        <a class="btn btn--primary" id="forumInfoPdf" href="assets/docs/iabf-2026-az.pdf" target="_blank" rel="noopener" data-pdf-az="assets/docs/iabf-2026-az.pdf" data-pdf-en="assets/docs/iabf-2026-en.pdf">Forum haqqında (PDF)</a>
-        <div class="sponsor-card__contact">
-          <a href="mailto:info@biznestv.az">
-            <svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5z"/></svg>
-            info@biznestv.az
-          </a>
-          <a href="tel:+994993735226">
-            <svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11 11 0 0 0 3.5.56 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11 11 0 0 0 .56 3.5 1 1 0 0 1-.24 1z"/></svg>
-            099 373 52 26
-          </a>
-        </div>
-      </aside>
     </div>
   </div>
 </section>
@@ -685,7 +688,7 @@
 </div>
 
 <!-- ============ 2024 DETAIL ============ -->
-<section class="section" id="f2024">
+<section class="section section--tint" id="f2024">
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow">Buraxılış · 2024</span>
@@ -741,7 +744,7 @@
 </section>
 
 <!-- ============ 2024 PANELS ============ -->
-<section class="section section--tint" id="panels">
+<section class="section" id="panels">
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow">Panellər · 2024</span>
@@ -817,7 +820,7 @@
 </section>
 
 <!-- ============ 2024 SPEAKERS ============ -->
-<section class="section" id="speakers">
+<section class="section section--tint" id="speakers">
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow">Fəxri qonaqlar · 2024</span>
@@ -1068,6 +1071,102 @@
   </div>
 </section>
 
+<!-- ============ PARTNERS (IV FORUM 2027) ============ -->
+<section class="section" id="partners">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Tərəfdaşlar · 2027</span>
+      <h2>Təşkilatçılar və tərəfdaşlar</h2>
+      <p>IV Beynəlxalq Aqrar Biznes Forumun təşkilatçıları və tərəfdaşları. Digər təşkilatçı və tərəfdaşlar dəqiqləşdikcə bu bölməyə əlavə ediləcək.</p>
+    </div>
+    <div class="partner-row reveal">
+      <!-- Təşkilatçılar -->
+      <div class="partner-group">
+        <h3 class="partner-group__title">Təşkilatçılar</h3>
+        <div class="partners">
+          <a class="partner" href="https://biznestv.az/" target="_blank" rel="noopener">
+            <div class="partner__logo"><img src="assets/img/sponsors/biznes-tv.png" alt="Biznes TV" loading="lazy"></div>
+            <b>Biznes TV</b>
+          </a>
+          <a class="partner" href="https://www.tdtb.com.tr/" target="_blank" rel="noopener">
+            <div class="partner__logo"><img class="is-round" src="assets/img/sponsors/turkdunya.png" alt="Türk Dünyası Tarım Birliği" loading="lazy"></div>
+            <b>Türk Dünyası Tarım Birliği</b>
+          </a>
+        </div>
+      </div>
+
+      <!-- Bilet tərəfdaşı -->
+      <div class="partner-group">
+        <h3 class="partner-group__title">Bilet tərəfdaşı</h3>
+        <div class="partners">
+          <a class="partner partner--ticket" href="https://birbilet.az/az/tedbir/iv-beynelxalq-aqrar-biznes-forum" target="_blank" rel="noopener">
+            <div class="partner__logo"><img src="assets/img/logo/birbilet-logo.png" alt="BirBilet" loading="lazy"></div>
+            <b>BirBilet</b>
+            <span>Bilet satışı</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Tərəfdaşlar — to be announced -->
+      <div class="partner-group">
+        <h3 class="partner-group__title">Tərəfdaşlar</h3>
+        <div class="partners">
+          <div class="partner partner--soon">
+            <div class="partner__logo"><i class="partner__plus" aria-hidden="true">+</i></div>
+            <b>Tezliklə</b>
+            <span>Tərəfdaşlar dəqiqləşdikcə əlavə ediləcək</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SPONSORSHIP ============ -->
+<section class="section sponsorship--spot" id="sponsors">
+  <span id="sponsorship" class="anchor-alias" aria-hidden="true"></span>
+  <div class="container">
+    <div class="sponsor-cta reveal">
+      <div class="sponsor-cta__text">
+        <span class="eyebrow">Sponsorluq</span>
+        <h2>Foruma sponsor olun</h2>
+        <p>International Agro Business Forum aqrar sahədə qərar verən tərəfləri — dövlət qurumlarını, investorları, istehsalçıları və beynəlxalq şirkətləri bir araya gətirir. Sponsorluq brendinizi məhz bu auditoriyaya birbaşa təqdim etmək imkanıdır.</p>
+
+        <div class="sponsor-stats">
+          <div><b>3K+</b><span>peşəkar ziyarətçi</span></div>
+          <div><b>85+</b><span>yerli & xarici şirkət</span></div>
+          <div><b>10+</b><span>iştirakçı ölkə</span></div>
+        </div>
+
+        <ul class="sponsor-benefits">
+          <li><svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg> Loqonuz forumun rəsmi materiallarında, saytda və səhnə fonunda</li>
+          <li><svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg> Sərgi zonasında stend və məhsul təqdimatı</li>
+          <li><svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg> Panel müzakirələrində çıxış imkanı</li>
+          <li><svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg> İştirakçılarla birbaşa B2B görüşlər</li>
+          <li><svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg> Media tərəfdaşlarımızda əhatə</li>
+        </ul>
+      </div>
+
+      <aside class="sponsor-card">
+        <span class="sponsor-card__label">Sponsorluq paketi</span>
+        <h3>Şərtləri öyrənin</h3>
+        <p>Sponsorluq paketləri və imkanlar barədə ətraflı məlumat üçün bizimlə əlaqə saxlayın — şirkətinizə uyğun formatı birlikdə seçək.</p>
+        <a class="btn btn--primary" id="forumInfoPdf" href="assets/docs/iabf-2026-az.pdf" target="_blank" rel="noopener" data-pdf-az="assets/docs/iabf-2026-az.pdf" data-pdf-en="assets/docs/iabf-2026-en.pdf">Forum haqqında (PDF)</a>
+        <div class="sponsor-card__contact">
+          <a href="mailto:agrobiznesforum@gmail.com">
+            <svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5z"/></svg>
+            agrobiznesforum@gmail.com
+          </a>
+          <a href="tel:+994993735226">
+            <svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11 11 0 0 0 3.5.56 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11 11 0 0 0 .56 3.5 1 1 0 0 1-.24 1z"/></svg>
+            099 373 52 26
+          </a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
 <!-- ============ GALLERY ============ -->
 <section class="section" id="gallery">
   <div class="container">
@@ -1124,9 +1223,9 @@
   <div class="container">
     <div class="cta reveal">
       <div class="cta__text">
-        <span class="eyebrow" style="color:var(--lime-400)">Forum 2026</span>
+        <span class="eyebrow" style="color:var(--lime-400)">Forum 2027</span>
         <h2>Növbəti Foruma biletlər</h2>
-        <p>International Agro Business Forum 2026 biletləri <b style="color:#fff">birbilet.az</b> üzərindən satışa çıxarılır. İştirakçı, spiker və ya tərəfdaş olmaq üçün bizimlə əlaqə saxlayın.</p>
+        <p>IV Beynəlxalq Aqrar Biznes Forumun biletləri <b style="color:#fff">birbilet.az</b> üzərindən satışdadır. İştirakçı, spiker və ya tərəfdaş olmaq üçün bizimlə əlaqə saxlayın.</p>
       </div>
       <div class="cta__actions">
         <div class="ticket-box">
@@ -1134,7 +1233,7 @@
             <span>Rəsmi bilet<br>tərəfdaşı</span>
             <img src="assets/img/logo/birbilet-logo.png" alt="birbilet.az">
           </div>
-          <a class="btn btn--ticket btn--book" href="https://birbilet.az/az/tedbir/beynelxalq-aqro-biznes-forum-2026" target="_blank" rel="noopener">Qeydiyyat</a>
+          <a class="btn btn--ticket" href="https://birbilet.az/az/tedbir/iv-beynelxalq-aqrar-biznes-forum" target="_blank" rel="noopener">Bilet al</a>
         </div>
         <a class="btn btn--ghost" href="#contact" style="border-color:rgba(255,255,255,.5)">Tərəfdaşlıq üçün əlaqə</a>
       </div>
@@ -1154,9 +1253,10 @@
         <h4>Forum</h4>
         <ul>
           <li><a href="#about">Forum haqqında</a></li>
-          <li><a href="#f2023">2023 forumu</a></li>
+          <li><a href="#tickets">2027 forumu</a></li>
+          <li><a href="#f2026">2026 forumu</a></li>
           <li><a href="#f2024">2024 forumu</a></li>
-          <li><a href="#cta">2026 forumu</a></li>
+          <li><a href="#f2023">2023 forumu</a></li>
         </ul>
       </div>
       <div>
@@ -1172,10 +1272,10 @@
         <h4>Əlaqə</h4>
         <ul class="footer__contact">
           <li><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7z"/></svg> Bakı, Azərbaycan</li>
-          <li><svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5z"/></svg> <a href="mailto:info@biznestv.az">info@biznestv.az</a></li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5z"/></svg> <a href="mailto:agrobiznesforum@gmail.com">agrobiznesforum@gmail.com</a></li>
           <li><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11 11 0 0 0 3.5.56 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11 11 0 0 0 .56 3.5 1 1 0 0 1-.24 1z"/></svg> <a href="tel:+994993735226">099 373 52 26</a></li>
         </ul>
-        <a class="footer__ticket" href="https://birbilet.az/az/tedbir/beynelxalq-aqro-biznes-forum-2026" target="_blank" rel="noopener">
+        <a class="footer__ticket" href="https://birbilet.az/az/tedbir/iv-beynelxalq-aqrar-biznes-forum" target="_blank" rel="noopener">
           <span>Biletlər:</span>
           <img src="assets/img/logo/birbilet-white.png" alt="birbilet.az">
         </a>
@@ -1202,10 +1302,10 @@
 
 <button class="totop" id="totop" aria-label="Yuxarı"><svg viewBox="0 0 24 24"><path d="M12 6 6 12l1.4 1.4L11 9.8V20h2V9.8l3.6 3.6L18 12z"/></svg></button>
 
-<!-- floating registration CTA (appears on scroll) -->
-<a class="sticky-cta" id="stickyCta" href="https://birbilet.az/az/tedbir/beynelxalq-aqro-biznes-forum-2026" target="_blank" rel="noopener">
-  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h11l5 5v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1zm9 1.5V9h3.5L13 5.5zM7 12h10v1.6H7V12zm0 3.4h10V17H7v-1.6z"/></svg>
-  <span>Qeydiyyat</span>
+<!-- floating ticket CTA (appears on scroll) -->
+<a class="sticky-cta" id="stickyCta" href="https://birbilet.az/az/tedbir/iv-beynelxalq-aqrar-biznes-forum" target="_blank" rel="noopener">
+  <span>Bilet al</span>
+  <svg class="sticky-cta__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 11h11.2l-4.6-4.6L13 5l7 7-7 7-1.4-1.4 4.6-4.6H5z"/></svg>
 </a>
 
 <!-- program modal -->
@@ -1331,7 +1431,7 @@
   <button class="lightbox__nav lightbox__nav--next" id="lbNext" aria-label="Növbəti">&#10095;</button>
 </div>
 
-<script src="assets/js/i18n.js?v=9"></script>
-<script src="assets/js/main.js?v=11"></script>
+<script src="assets/js/i18n.js?v=12"></script>
+<script src="assets/js/main.js?v=14"></script>
 </body>
 </html>

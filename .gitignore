@@ -7,3 +7,6 @@ photos/
 
 # инструментальное
 .claude/
+
+# генерируется на сервере scripts/youtube-feed.sh (cron)
+site/assets/data/youtube.json
